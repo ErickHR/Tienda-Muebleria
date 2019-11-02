@@ -2388,7 +2388,7 @@ span.email-notes {
 }
 .work-box,
 .card-blog {
-  box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 13px 8px -5px rgba(0, 0, 0);
   margin-bottom: 3rem !important;
   border: #000 0.018px solid;/*esto es para las margenes negras de la caja*/
 }
@@ -2402,6 +2402,10 @@ span.email-notes {
   overflow: hidden;
 }
 
+#map {
+  width: 500px;
+  height: 500px;
+}
 
 .work-img {
   display: block;
