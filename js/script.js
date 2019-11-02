@@ -25,7 +25,7 @@ function initialize(){
         map: map, 
         //icon: image,
         //animation: google.maps.Animation.BOUNCE, 
-        //title: "pichanga: La once"
+        //title: "Muebleria M&M"
     });
 
 }
@@ -35,12 +35,22 @@ initialize()
 let map
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: -12.202067, lng: -76.935332 },
+        center: { lat: -12.2010632, lng: -76.9356382 },
         zoom: 17,
     });
     var marker = new google.maps.Marker({
-        position: { lat: -12.202067, lng: -76.935332 },
+        position: { lat: -12.2010632, lng: -76.9356382 },
         map: map,
-        title: 'Muebleria M&m'
+        title: 'Muebleria M&M'
     });
+}
+
+function openVentana(){
+    $(".caja-logeo").slideDown("slow");
+    //$(".todo").css("display", "none");
+    document.getElementById("todo").style.display="none"
+}
+function closeVentana(){
+    $(".caja-logeo").slideUp("slow");
+    document.getElementById("todo").style.display="block"
 }
