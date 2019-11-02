@@ -44,3 +44,13 @@ function initMap() {
         title: 'Muebleria M&M'
     });
 }
+
+function openVentana(){
+    $(".caja-logeo").slideDown("slow");
+    //$(".todo").css("display", "none");
+    document.getElementById("todo").style.display="none"
+}
+function closeVentana(){
+    $(".caja-logeo").slideUp("slow");
+    document.getElementById("todo").style.display="block"
+}
