@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 19-11-2019 a las 13:55:54
--- Versión del servidor: 5.7.17-log
--- Versión de PHP: 5.6.30
+-- Servidor: 127.0.0.1:3306
+-- Tiempo de generación: 19-11-2019 a las 15:16:05
+-- Versión del servidor: 5.7.26
+-- Versión de PHP: 7.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `lp2final`
+-- Base de datos: `tiendamuebleria`
 --
 
 -- --------------------------------------------------------
@@ -26,11 +28,13 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `cargo`
 --
 
-CREATE TABLE `cargo` (
-  `idCargo` int(11) NOT NULL,
+DROP TABLE IF EXISTS `cargo`;
+CREATE TABLE IF NOT EXISTS `cargo` (
+  `idCargo` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(30) DEFAULT NULL,
-  `sueldo` double DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `sueldo` double DEFAULT NULL,
+  PRIMARY KEY (`idCargo`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `cargo`
@@ -54,10 +58,12 @@ INSERT INTO `cargo` (`idCargo`, `nombre`, `sueldo`) VALUES
 -- Estructura de tabla para la tabla `categoriageneral`
 --
 
-CREATE TABLE `categoriageneral` (
-  `idCategoriaGeneral` int(11) NOT NULL,
-  `nombre` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+DROP TABLE IF EXISTS `categoriageneral`;
+CREATE TABLE IF NOT EXISTS `categoriageneral` (
+  `idCategoriaGeneral` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`idCategoriaGeneral`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `categoriageneral`
@@ -76,9 +82,11 @@ INSERT INTO `categoriageneral` (`idCategoriaGeneral`, `nombre`) VALUES
 -- Estructura de tabla para la tabla `categoriaproducto`
 --
 
-CREATE TABLE `categoriaproducto` (
-  `idCategoriaProducto` int(11) NOT NULL,
-  `nombre` varchar(30) DEFAULT NULL
+DROP TABLE IF EXISTS `categoriaproducto`;
+CREATE TABLE IF NOT EXISTS `categoriaproducto` (
+  `idCategoriaProducto` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`idCategoriaProducto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -87,10 +95,12 @@ CREATE TABLE `categoriaproducto` (
 -- Estructura de tabla para la tabla `celular`
 --
 
-CREATE TABLE `celular` (
-  `idCelular` int(11) NOT NULL,
-  `celular` varchar(9) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+DROP TABLE IF EXISTS `celular`;
+CREATE TABLE IF NOT EXISTS `celular` (
+  `idCelular` int(11) NOT NULL AUTO_INCREMENT,
+  `celular` varchar(9) DEFAULT NULL,
+  PRIMARY KEY (`idCelular`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `celular`
@@ -124,15 +134,17 @@ INSERT INTO `celular` (`idCelular`, `celular`) VALUES
 -- Estructura de tabla para la tabla `clientes`
 --
 
-CREATE TABLE `clientes` (
-  `idCliente` int(11) NOT NULL,
+DROP TABLE IF EXISTS `clientes`;
+CREATE TABLE IF NOT EXISTS `clientes` (
+  `idCliente` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(30) DEFAULT NULL,
   `aPaterno` varchar(20) DEFAULT NULL,
   `aMaterno` varchar(20) DEFAULT NULL,
   `dni` varchar(8) DEFAULT NULL,
   `idDireccion` int(11) DEFAULT NULL,
-  `idEmail` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `idEmail` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idCliente`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `clientes`
@@ -166,14 +178,16 @@ INSERT INTO `clientes` (`idCliente`, `nombre`, `aPaterno`, `aMaterno`, `dni`, `i
 -- Estructura de tabla para la tabla `detalleventa`
 --
 
-CREATE TABLE `detalleventa` (
-  `idDetalleVenta` int(11) NOT NULL,
+DROP TABLE IF EXISTS `detalleventa`;
+CREATE TABLE IF NOT EXISTS `detalleventa` (
+  `idDetalleVenta` int(11) NOT NULL AUTO_INCREMENT,
   `cantidad` int(11) DEFAULT NULL,
   `descuento` double DEFAULT NULL,
   `precioUnitario` double DEFAULT NULL,
   `importe` double DEFAULT NULL,
   `idVenta` int(11) DEFAULT NULL,
-  `idProducto` int(11) DEFAULT NULL
+  `idProducto` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idDetalleVenta`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -182,14 +196,16 @@ CREATE TABLE `detalleventa` (
 -- Estructura de tabla para la tabla `direccion`
 --
 
-CREATE TABLE `direccion` (
-  `idDireccion` int(11) NOT NULL,
+DROP TABLE IF EXISTS `direccion`;
+CREATE TABLE IF NOT EXISTS `direccion` (
+  `idDireccion` int(11) NOT NULL AUTO_INCREMENT,
   `departamento` varchar(30) DEFAULT NULL,
   `provincia` varchar(30) DEFAULT NULL,
   `distrito` varchar(30) DEFAULT NULL,
   `avenida` varchar(30) DEFAULT NULL,
-  `calle` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `calle` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`idDireccion`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `direccion`
@@ -223,10 +239,12 @@ INSERT INTO `direccion` (`idDireccion`, `departamento`, `provincia`, `distrito`,
 -- Estructura de tabla para la tabla `email`
 --
 
-CREATE TABLE `email` (
-  `idEmail` int(11) NOT NULL,
-  `email` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+DROP TABLE IF EXISTS `email`;
+CREATE TABLE IF NOT EXISTS `email` (
+  `idEmail` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`idEmail`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `email`
@@ -260,13 +278,16 @@ INSERT INTO `email` (`idEmail`, `email`) VALUES
 -- Estructura de tabla para la tabla `empleado`
 --
 
-CREATE TABLE `empleado` (
-  `idEmpleado` int(11) NOT NULL,
+DROP TABLE IF EXISTS `empleado`;
+CREATE TABLE IF NOT EXISTS `empleado` (
+  `idEmpleado` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(30) DEFAULT NULL,
   `aPaterno` varchar(20) DEFAULT NULL,
   `aMaterno` varchar(20) DEFAULT NULL,
-  `idCargo` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `idCargo` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idEmpleado`),
+  KEY `idCargo` (`idCargo`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `empleado`
@@ -283,7 +304,7 @@ INSERT INTO `empleado` (`idEmpleado`, `nombre`, `aPaterno`, `aMaterno`, `idCargo
 (8, 'Martín', 'Oruna', 'Páez', 8),
 (9, 'Gerardo', 'Reyero', 'Castañeda', 9),
 (10, 'Ana', 'Cruz', 'Sotomayor', 10),
-(11, 'Damián', 'Perea', 'Cárdenas', 10);
+(12, 'Anthony', 'Talavera', 'Carranza', 10);
 
 -- --------------------------------------------------------
 
@@ -291,9 +312,11 @@ INSERT INTO `empleado` (`idEmpleado`, `nombre`, `aPaterno`, `aMaterno`, `idCargo
 -- Estructura de tabla para la tabla `material`
 --
 
-CREATE TABLE `material` (
-  `idMaterial` int(11) NOT NULL,
-  `nombre` varchar(30) DEFAULT NULL
+DROP TABLE IF EXISTS `material`;
+CREATE TABLE IF NOT EXISTS `material` (
+  `idMaterial` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`idMaterial`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -302,8 +325,9 @@ CREATE TABLE `material` (
 -- Estructura de tabla para la tabla `producto`
 --
 
-CREATE TABLE `producto` (
-  `idProducto` int(11) NOT NULL,
+DROP TABLE IF EXISTS `producto`;
+CREATE TABLE IF NOT EXISTS `producto` (
+  `idProducto` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(30) DEFAULT NULL,
   `codigo` varchar(10) DEFAULT NULL,
   `precio` double DEFAULT NULL,
@@ -315,7 +339,9 @@ CREATE TABLE `producto` (
   `idMaterial` int(11) DEFAULT NULL,
   `idCategoriaGeneral` int(11) DEFAULT NULL,
   `idCategoriaProducto` int(11) DEFAULT NULL,
-  `idProveedor` int(11) DEFAULT NULL
+  `idProveedor` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idProducto`),
+  UNIQUE KEY `idProveedor` (`idProveedor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -324,12 +350,14 @@ CREATE TABLE `producto` (
 -- Estructura de tabla para la tabla `proveedor`
 --
 
-CREATE TABLE `proveedor` (
-  `idProveedor` int(11) NOT NULL,
+DROP TABLE IF EXISTS `proveedor`;
+CREATE TABLE IF NOT EXISTS `proveedor` (
+  `idProveedor` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(30) DEFAULT NULL,
   `idCelular` int(11) DEFAULT NULL,
   `idEmail` int(11) DEFAULT NULL,
-  `idDireccion` int(11) DEFAULT NULL
+  `idDireccion` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idProveedor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -338,9 +366,11 @@ CREATE TABLE `proveedor` (
 -- Estructura de tabla para la tabla `tipo`
 --
 
-CREATE TABLE `tipo` (
-  `idTipo` int(11) NOT NULL,
-  `nombre` varchar(30) DEFAULT NULL
+DROP TABLE IF EXISTS `tipo`;
+CREATE TABLE IF NOT EXISTS `tipo` (
+  `idTipo` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`idTipo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -349,12 +379,14 @@ CREATE TABLE `tipo` (
 -- Estructura de tabla para la tabla `usuario`
 --
 
-CREATE TABLE `usuario` (
-  `isUsuario` int(11) NOT NULL,
+DROP TABLE IF EXISTS `usuario`;
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `isUsuario` int(11) NOT NULL AUTO_INCREMENT,
   `usuario` varchar(30) DEFAULT NULL,
   `contraseña` varchar(30) DEFAULT NULL,
-  `idCliente` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `idCliente` int(11) DEFAULT NULL,
+  PRIMARY KEY (`isUsuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuario`
@@ -388,188 +420,34 @@ INSERT INTO `usuario` (`isUsuario`, `usuario`, `contraseña`, `idCliente`) VALUE
 -- Estructura de tabla para la tabla `ventas`
 --
 
-CREATE TABLE `ventas` (
-  `idVenta` int(11) NOT NULL,
+DROP TABLE IF EXISTS `ventas`;
+CREATE TABLE IF NOT EXISTS `ventas` (
+  `idVenta` int(11) NOT NULL AUTO_INCREMENT,
   `fecha` varchar(8) DEFAULT NULL,
   `IGV` double DEFAULT NULL,
   `idUsuario` int(11) DEFAULT NULL,
   `idEmpleado` int(11) DEFAULT NULL,
-  `idTipo` int(11) DEFAULT NULL
+  `idTipo` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idVenta`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Índices para tablas volcadas
+-- Restricciones para tablas volcadas
 --
 
 --
--- Indices de la tabla `cargo`
---
-ALTER TABLE `cargo`
-  ADD PRIMARY KEY (`idCargo`);
-
---
--- Indices de la tabla `categoriageneral`
---
-ALTER TABLE `categoriageneral`
-  ADD PRIMARY KEY (`idCategoriaGeneral`);
-
---
--- Indices de la tabla `categoriaproducto`
---
-ALTER TABLE `categoriaproducto`
-  ADD PRIMARY KEY (`idCategoriaProducto`);
-
---
--- Indices de la tabla `celular`
---
-ALTER TABLE `celular`
-  ADD PRIMARY KEY (`idCelular`);
-
---
--- Indices de la tabla `clientes`
---
-ALTER TABLE `clientes`
-  ADD PRIMARY KEY (`idCliente`);
-
---
--- Indices de la tabla `detalleventa`
---
-ALTER TABLE `detalleventa`
-  ADD PRIMARY KEY (`idDetalleVenta`);
-
---
--- Indices de la tabla `direccion`
---
-ALTER TABLE `direccion`
-  ADD PRIMARY KEY (`idDireccion`);
-
---
--- Indices de la tabla `email`
---
-ALTER TABLE `email`
-  ADD PRIMARY KEY (`idEmail`);
-
---
--- Indices de la tabla `empleado`
+-- Filtros para la tabla `empleado`
 --
 ALTER TABLE `empleado`
-  ADD PRIMARY KEY (`idEmpleado`);
+  ADD CONSTRAINT `empleado_ibfk_1` FOREIGN KEY (`idCargo`) REFERENCES `cargo` (`idCargo`);
 
 --
--- Indices de la tabla `material`
---
-ALTER TABLE `material`
-  ADD PRIMARY KEY (`idMaterial`);
-
---
--- Indices de la tabla `producto`
+-- Filtros para la tabla `producto`
 --
 ALTER TABLE `producto`
-  ADD PRIMARY KEY (`idProducto`);
+  ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`idProveedor`) REFERENCES `proveedor` (`idProveedor`);
+COMMIT;
 
---
--- Indices de la tabla `proveedor`
---
-ALTER TABLE `proveedor`
-  ADD PRIMARY KEY (`idProveedor`);
-
---
--- Indices de la tabla `tipo`
---
-ALTER TABLE `tipo`
-  ADD PRIMARY KEY (`idTipo`);
-
---
--- Indices de la tabla `usuario`
---
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`isUsuario`);
-
---
--- Indices de la tabla `ventas`
---
-ALTER TABLE `ventas`
-  ADD PRIMARY KEY (`idVenta`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `cargo`
---
-ALTER TABLE `cargo`
-  MODIFY `idCargo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
---
--- AUTO_INCREMENT de la tabla `categoriageneral`
---
-ALTER TABLE `categoriageneral`
-  MODIFY `idCategoriaGeneral` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT de la tabla `categoriaproducto`
---
-ALTER TABLE `categoriaproducto`
-  MODIFY `idCategoriaProducto` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT de la tabla `celular`
---
-ALTER TABLE `celular`
-  MODIFY `idCelular` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
---
--- AUTO_INCREMENT de la tabla `clientes`
---
-ALTER TABLE `clientes`
-  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
---
--- AUTO_INCREMENT de la tabla `detalleventa`
---
-ALTER TABLE `detalleventa`
-  MODIFY `idDetalleVenta` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT de la tabla `direccion`
---
-ALTER TABLE `direccion`
-  MODIFY `idDireccion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
---
--- AUTO_INCREMENT de la tabla `email`
---
-ALTER TABLE `email`
-  MODIFY `idEmail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
---
--- AUTO_INCREMENT de la tabla `empleado`
---
-ALTER TABLE `empleado`
-  MODIFY `idEmpleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
---
--- AUTO_INCREMENT de la tabla `material`
---
-ALTER TABLE `material`
-  MODIFY `idMaterial` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT de la tabla `producto`
---
-ALTER TABLE `producto`
-  MODIFY `idProducto` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT de la tabla `proveedor`
---
-ALTER TABLE `proveedor`
-  MODIFY `idProveedor` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT de la tabla `tipo`
---
-ALTER TABLE `tipo`
-  MODIFY `idTipo` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT de la tabla `usuario`
---
-ALTER TABLE `usuario`
-  MODIFY `isUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
---
--- AUTO_INCREMENT de la tabla `ventas`
---
-ALTER TABLE `ventas`
-  MODIFY `idVenta` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
