@@ -6,10 +6,7 @@
 package coneccion;
 
 import java.sql.Connection;
-import java.sql.Driver;
 import java.sql.DriverManager;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -22,13 +19,13 @@ public class Conexion {
     private static String password="";
     private static Connection cn;
     
-    private static Connection abrir(){
+    public static Connection abrir(){
         try {
-            Class.forName(password);
+            Class.forName("com.mysql.jdbc.Driver");
             cn=DriverManager.getConnection(url,usuario, password);
             return cn;
         } catch (Exception ex) {
-            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("error de la conexion");
             return null;
         }
         
