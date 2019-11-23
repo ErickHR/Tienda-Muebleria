@@ -10,7 +10,7 @@ package bean;
  * @author Anthony
  */
 public class CategoriaGeneral {
-    
+
     private int Idcategoriageneral;
     private String Nombre;
 
@@ -29,7 +29,5 @@ public class CategoriaGeneral {
     public void setNombre(String Nombre) {
         this.Nombre = Nombre;
     }
-    
-    
-    
+
 }

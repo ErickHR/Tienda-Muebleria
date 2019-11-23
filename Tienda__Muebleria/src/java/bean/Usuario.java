@@ -10,7 +10,7 @@ package bean;
  * @author Anthony
  */
 public class Usuario {
-    
+
     private int Idusuario;
     private String Usuario;
     private String Contraseña;
@@ -47,5 +47,5 @@ public class Usuario {
     public void setIdcliente(int Idcliente) {
         this.Idcliente = Idcliente;
     }
-    
+
 }

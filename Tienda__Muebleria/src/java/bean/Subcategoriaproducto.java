@@ -10,7 +10,7 @@ package bean;
  * @author Anthony
  */
 public class Subcategoriaproducto {
-    
+
     private int Idsubcategoriaproducto;
     private String Nombre;
     private int Idcategoriaproducto;
@@ -38,7 +38,5 @@ public class Subcategoriaproducto {
     public void setIdcategoriaproducto(int Idcategoriaproducto) {
         this.Idcategoriaproducto = Idcategoriaproducto;
     }
-    
-    
-    
+
 }

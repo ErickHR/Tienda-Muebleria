@@ -10,7 +10,8 @@ package bean;
  * @author Anthony
  */
 public class Clientes {
-     private int idcliente;
+
+    private int idcliente;
     private String Nombre;
     private String Ap_paterno;
     private String Ap_materno;
@@ -82,6 +83,5 @@ public class Clientes {
     public void setCelular(int Celular) {
         this.Celular = Celular;
     }
-    
-    
+
 }

@@ -10,6 +10,7 @@ package bean;
  * @author Anthony
  */
 public class DetalleVenta {
+
     private int Iddetalleventa;
     private int Cantidad;
     private double Descuento;
@@ -73,7 +74,5 @@ public class DetalleVenta {
     public void setIdproducto(int Idproducto) {
         this.Idproducto = Idproducto;
     }
-    
-    
-    
+
 }

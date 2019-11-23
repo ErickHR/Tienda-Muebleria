@@ -10,6 +10,7 @@ package bean;
  * @author Anthony
  */
 public class Empleado {
+
     private int Idempleado;
     private String Nombre;
     private String Ap_paterno;
@@ -83,8 +84,4 @@ public class Empleado {
         this.Idcargo = Idcargo;
     }
 
-   
 }
-
-
-

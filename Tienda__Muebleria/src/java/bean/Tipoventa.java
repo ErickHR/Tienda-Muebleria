@@ -10,7 +10,7 @@ package bean;
  * @author Anthony
  */
 public class Tipoventa {
-    
+
     private int Idtipoventa;
     private String Nombre;
 
@@ -29,7 +29,5 @@ public class Tipoventa {
     public void setNombre(String Nombre) {
         this.Nombre = Nombre;
     }
-    
-    
-    
+
 }

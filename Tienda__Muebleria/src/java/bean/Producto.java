@@ -12,7 +12,7 @@ import java.sql.Date;
  * @author Anthony
  */
 public class Producto {
-    
+
     private int Idproducto;
     private String Nombre;
     private String Descripcion;
@@ -122,6 +122,4 @@ public class Producto {
         this.Codigo = Codigo;
     }
 
-    
-    
 }

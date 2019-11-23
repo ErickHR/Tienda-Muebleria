@@ -10,7 +10,7 @@ package bean;
  * @author Anthony
  */
 public class Proveedor {
-    
+
     private int Idproveedor;
     private String Nombre;
     private int Celular;
@@ -74,7 +74,5 @@ public class Proveedor {
     public void setIddueño(int Iddueño) {
         this.Iddueño = Iddueño;
     }
-    
-    
-    
+
 }

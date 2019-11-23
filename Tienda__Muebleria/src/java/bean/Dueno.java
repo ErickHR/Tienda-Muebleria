@@ -10,7 +10,7 @@ package bean;
  * @author Anthony
  */
 public class Dueno {
-    
+
     private int Iddueño;
     private String Nombre;
     private String Ap_paterno;
@@ -56,7 +56,5 @@ public class Dueno {
     public void setDni(int Dni) {
         this.Dni = Dni;
     }
-    
-    
-    
+
 }
