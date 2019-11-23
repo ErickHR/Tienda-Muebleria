@@ -5,68 +5,123 @@
  */
 package bean;
 
+import java.sql.Date;
+
 /**
  *
  * @author Anthony
  */
 public class Producto {
     
-    private int idproducto;
-    private String nombre;
-    private String descripcion;
-    private String color;
-    private double precio;
-    private int idproveedor;
+    private int Idproducto;
+    private String Nombre;
+    private String Descripcion;
+    private Date Fechadeentrega;
+    private int stock;
+    private double PrecioCompra;
+    private String Color;
+    private String Dimensiones;
+    private int Idcategoriageneral;
+    private int Idsubcategoriaproducto;
+    private int Idproveedor;
+    private int Codigo;
 
     public int getIdproducto() {
-        return idproducto;
+        return Idproducto;
     }
 
-    public void setIdproducto(int idproducto) {
-        this.idproducto = idproducto;
+    public void setIdproducto(int Idproducto) {
+        this.Idproducto = Idproducto;
     }
 
     public String getNombre() {
-        return nombre;
+        return Nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
     }
 
     public String getDescripcion() {
-        return descripcion;
+        return Descripcion;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setDescripcion(String Descripcion) {
+        this.Descripcion = Descripcion;
+    }
+
+    public Date getFechadeentrega() {
+        return Fechadeentrega;
+    }
+
+    public void setFechadeentrega(Date Fechadeentrega) {
+        this.Fechadeentrega = Fechadeentrega;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    public double getPrecioCompra() {
+        return PrecioCompra;
+    }
+
+    public void setPrecioCompra(double PrecioCompra) {
+        this.PrecioCompra = PrecioCompra;
     }
 
     public String getColor() {
-        return color;
+        return Color;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public void setColor(String Color) {
+        this.Color = Color;
     }
 
-    public double getPrecio() {
-        return precio;
+    public String getDimensiones() {
+        return Dimensiones;
     }
 
-    public void setPrecio(double precio) {
-        this.precio = precio;
+    public void setDimensiones(String Dimensiones) {
+        this.Dimensiones = Dimensiones;
+    }
+
+    public int getIdcategoriageneral() {
+        return Idcategoriageneral;
+    }
+
+    public void setIdcategoriageneral(int Idcategoriageneral) {
+        this.Idcategoriageneral = Idcategoriageneral;
+    }
+
+    public int getIdsubcategoriaproducto() {
+        return Idsubcategoriaproducto;
+    }
+
+    public void setIdsubcategoriaproducto(int Idsubcategoriaproducto) {
+        this.Idsubcategoriaproducto = Idsubcategoriaproducto;
     }
 
     public int getIdproveedor() {
-        return idproveedor;
+        return Idproveedor;
     }
 
-    public void setIdproveedor(int idproveedor) {
-        this.idproveedor = idproveedor;
+    public void setIdproveedor(int Idproveedor) {
+        this.Idproveedor = Idproveedor;
     }
-        
-    
+
+    public int getCodigo() {
+        return Codigo;
+    }
+
+    public void setCodigo(int Codigo) {
+        this.Codigo = Codigo;
+    }
+
     
     
 }

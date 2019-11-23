@@ -9,22 +9,20 @@ package bean;
  *
  * @author Anthony
  */
-public class Clientes {
-     private int idcliente;
+public class Dueno {
+    
+    private int Iddueño;
     private String Nombre;
     private String Ap_paterno;
     private String Ap_materno;
     private int Dni;
-    private String Email;
-    private String Direccion;
-    private int Celular;
 
-    public int getIdcliente() {
-        return idcliente;
+    public int getIddueño() {
+        return Iddueño;
     }
 
-    public void setIdcliente(int idcliente) {
-        this.idcliente = idcliente;
+    public void setIddueño(int Iddueño) {
+        this.Iddueño = Iddueño;
     }
 
     public String getNombre() {
@@ -58,30 +56,7 @@ public class Clientes {
     public void setDni(int Dni) {
         this.Dni = Dni;
     }
-
-    public String getEmail() {
-        return Email;
-    }
-
-    public void setEmail(String Email) {
-        this.Email = Email;
-    }
-
-    public String getDireccion() {
-        return Direccion;
-    }
-
-    public void setDireccion(String Direccion) {
-        this.Direccion = Direccion;
-    }
-
-    public int getCelular() {
-        return Celular;
-    }
-
-    public void setCelular(int Celular) {
-        this.Celular = Celular;
-    }
+    
     
     
 }

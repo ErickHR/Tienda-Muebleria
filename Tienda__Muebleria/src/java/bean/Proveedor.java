@@ -11,68 +11,68 @@ package bean;
  */
 public class Proveedor {
     
-    private int idproveedor;
-    private String nombre;
-    private String ap_paterno;
-    private String ap_materno;
-    private String direccion;
-    private String email;
-    private int celular;
+    private int Idproveedor;
+    private String Nombre;
+    private int Celular;
+    private String Email;
+    private String Direccion;
+    private int Ruc;
+    private int Iddueño;
 
     public int getIdproveedor() {
-        return idproveedor;
+        return Idproveedor;
     }
 
-    public void setIdproveedor(int idproveedor) {
-        this.idproveedor = idproveedor;
+    public void setIdproveedor(int Idproveedor) {
+        this.Idproveedor = Idproveedor;
     }
 
     public String getNombre() {
-        return nombre;
+        return Nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getAp_paterno() {
-        return ap_paterno;
-    }
-
-    public void setAp_paterno(String ap_paterno) {
-        this.ap_paterno = ap_paterno;
-    }
-
-    public String getAp_materno() {
-        return ap_materno;
-    }
-
-    public void setAp_materno(String ap_materno) {
-        this.ap_materno = ap_materno;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
     }
 
     public int getCelular() {
-        return celular;
+        return Celular;
     }
 
-    public void setCelular(int celular) {
-        this.celular = celular;
+    public void setCelular(int Celular) {
+        this.Celular = Celular;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String Email) {
+        this.Email = Email;
+    }
+
+    public String getDireccion() {
+        return Direccion;
+    }
+
+    public void setDireccion(String Direccion) {
+        this.Direccion = Direccion;
+    }
+
+    public int getRuc() {
+        return Ruc;
+    }
+
+    public void setRuc(int Ruc) {
+        this.Ruc = Ruc;
+    }
+
+    public int getIddueño() {
+        return Iddueño;
+    }
+
+    public void setIddueño(int Iddueño) {
+        this.Iddueño = Iddueño;
     }
     
     

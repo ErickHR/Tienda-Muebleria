@@ -11,43 +11,41 @@ package bean;
  */
 public class Usuario {
     
-    private int idusuario;
-    private String usuario;
-    private String contraseña;
-    private int idcliente;
+    private int Idusuario;
+    private String Usuario;
+    private String Contraseña;
+    private int Idcliente;
 
     public int getIdusuario() {
-        return idusuario;
+        return Idusuario;
     }
 
-    public void setIdusuario(int idusuario) {
-        this.idusuario = idusuario;
+    public void setIdusuario(int Idusuario) {
+        this.Idusuario = Idusuario;
     }
 
     public String getUsuario() {
-        return usuario;
+        return Usuario;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setUsuario(String Usuario) {
+        this.Usuario = Usuario;
     }
 
     public String getContraseña() {
-        return contraseña;
+        return Contraseña;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContraseña(String Contraseña) {
+        this.Contraseña = Contraseña;
     }
 
     public int getIdcliente() {
-        return idcliente;
+        return Idcliente;
     }
 
-    public void setIdcliente(int idcliente) {
-        this.idcliente = idcliente;
+    public void setIdcliente(int Idcliente) {
+        this.Idcliente = Idcliente;
     }
-    
-    
     
 }

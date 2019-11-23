@@ -10,51 +10,70 @@ package bean;
  * @author Anthony
  */
 public class DetalleVenta {
-    private int detalleventa;
-    private int cantidad;
-    private double preciototal;
-    private int ideventas;
-    private int idproducto;
+    private int Iddetalleventa;
+    private int Cantidad;
+    private double Descuento;
+    private double PrecioUnitario;
+    private double importe;
+    private int Idventa;
+    private int Idproducto;
 
-    public int getDetalleventa() {
-        return detalleventa;
+    public int getIddetalleventa() {
+        return Iddetalleventa;
     }
 
-    public void setDetalleventa(int detalleventa) {
-        this.detalleventa = detalleventa;
+    public void setIddetalleventa(int Iddetalleventa) {
+        this.Iddetalleventa = Iddetalleventa;
     }
 
     public int getCantidad() {
-        return cantidad;
+        return Cantidad;
     }
 
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
+    public void setCantidad(int Cantidad) {
+        this.Cantidad = Cantidad;
     }
 
-    public double getPreciototal() {
-        return preciototal;
+    public double getDescuento() {
+        return Descuento;
     }
 
-    public void setPreciototal(double preciototal) {
-        this.preciototal = preciototal;
+    public void setDescuento(double Descuento) {
+        this.Descuento = Descuento;
     }
 
-    public int getIdeventas() {
-        return ideventas;
+    public double getPrecioUnitario() {
+        return PrecioUnitario;
     }
 
-    public void setIdeventas(int ideventas) {
-        this.ideventas = ideventas;
+    public void setPrecioUnitario(double PrecioUnitario) {
+        this.PrecioUnitario = PrecioUnitario;
+    }
+
+    public double getImporte() {
+        return importe;
+    }
+
+    public void setImporte(double importe) {
+        this.importe = importe;
+    }
+
+    public int getIdventa() {
+        return Idventa;
+    }
+
+    public void setIdventa(int Idventa) {
+        this.Idventa = Idventa;
     }
 
     public int getIdproducto() {
-        return idproducto;
+        return Idproducto;
     }
 
-    public void setIdproducto(int idproducto) {
-        this.idproducto = idproducto;
+    public void setIdproducto(int Idproducto) {
+        this.Idproducto = Idproducto;
     }
+    
     
     
 }

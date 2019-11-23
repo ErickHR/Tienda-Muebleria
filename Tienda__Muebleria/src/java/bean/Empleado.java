@@ -10,71 +10,80 @@ package bean;
  * @author Anthony
  */
 public class Empleado {
-    private int idempleado;
-    private String nombre;
-    private String ap_paterno;
-    private String ap_materno;
-    private String direccion;
-    private int celular;
-    private int idcargo;
+    private int Idempleado;
+    private String Nombre;
+    private String Ap_paterno;
+    private String Ap_materno;
+    private String Email;
+    private String Direccion;
+    private int Celular;
+    private int Idcargo;
 
     public int getIdempleado() {
-        return idempleado;
+        return Idempleado;
     }
 
-    public void setIdempleado(int idempleado) {
-        this.idempleado = idempleado;
+    public void setIdempleado(int Idempleado) {
+        this.Idempleado = Idempleado;
     }
 
     public String getNombre() {
-        return nombre;
+        return Nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
     }
 
     public String getAp_paterno() {
-        return ap_paterno;
+        return Ap_paterno;
     }
 
-    public void setAp_paterno(String ap_paterno) {
-        this.ap_paterno = ap_paterno;
+    public void setAp_paterno(String Ap_paterno) {
+        this.Ap_paterno = Ap_paterno;
     }
 
     public String getAp_materno() {
-        return ap_materno;
+        return Ap_materno;
     }
 
-    public void setAp_materno(String ap_materno) {
-        this.ap_materno = ap_materno;
+    public void setAp_materno(String Ap_materno) {
+        this.Ap_materno = Ap_materno;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String Email) {
+        this.Email = Email;
     }
 
     public String getDireccion() {
-        return direccion;
+        return Direccion;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void setDireccion(String Direccion) {
+        this.Direccion = Direccion;
     }
 
     public int getCelular() {
-        return celular;
+        return Celular;
     }
 
-    public void setCelular(int celular) {
-        this.celular = celular;
+    public void setCelular(int Celular) {
+        this.Celular = Celular;
     }
 
     public int getIdcargo() {
-        return idcargo;
+        return Idcargo;
     }
 
-    public void setIdcargo(int idcargo) {
-        this.idcargo = idcargo;
+    public void setIdcargo(int Idcargo) {
+        this.Idcargo = Idcargo;
     }
-    
-    
+
+   
 }
 
 
