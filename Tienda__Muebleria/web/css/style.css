@@ -2532,3 +2532,7 @@ span.email-notes {
     top: 295px;
     right: 25px;
 }
+.logo{
+    position: relative;
+    margin-top: 0px;
+}
