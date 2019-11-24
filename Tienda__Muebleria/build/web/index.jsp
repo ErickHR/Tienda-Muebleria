@@ -6,7 +6,6 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!doctype html>
 <html lang="en">
 
     <head>
@@ -86,7 +85,7 @@
                                             <span class="icon-bar"></span>
                                         </button>
                                         <a class="navbar-brand page-scroll sticky-logo" href="index.html">
-                                            <h1><img src="img/logo/logomm.png" class="logo"></h1>
+                                            <h1><img src="img/logo/mm.png" class="logo"></h1>
                                         </a>
                                     </div>
                                     <div class="collapse navbar-collapse main-menu bs-example-navbar-collapse-1"
