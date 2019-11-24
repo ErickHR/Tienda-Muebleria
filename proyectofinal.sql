@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 21-11-2019 a las 03:32:00
+-- Tiempo de generación: 24-11-2019 a las 16:37:31
 -- Versión del servidor: 5.7.26
 -- Versión de PHP: 7.2.18
 
@@ -56,7 +56,18 @@ CREATE TABLE IF NOT EXISTS `categoriageneral` (
   `Idcategoriageneral` int(11) NOT NULL AUTO_INCREMENT,
   `Nombre` varchar(150) NOT NULL,
   PRIMARY KEY (`Idcategoriageneral`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `categoriageneral`
+--
+
+INSERT INTO `categoriageneral` (`Idcategoriageneral`, `Nombre`) VALUES
+(1, 'Sala lounge'),
+(2, 'Muebles de sala'),
+(3, 'Sala de entretenimiento'),
+(4, 'Escritorios'),
+(5, 'Juego comedor');
 
 -- --------------------------------------------------------
 
@@ -69,7 +80,17 @@ CREATE TABLE IF NOT EXISTS `categoriaproducto` (
   `Idcategoriaproducto` int(11) NOT NULL AUTO_INCREMENT,
   `Nombre` varchar(150) NOT NULL,
   PRIMARY KEY (`Idcategoriaproducto`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `categoriaproducto`
+--
+
+INSERT INTO `categoriaproducto` (`Idcategoriaproducto`, `Nombre`) VALUES
+(1, 'Mesas'),
+(2, 'Sillas'),
+(3, 'Muebles dobles '),
+(4, 'Muebles individuales');
 
 -- --------------------------------------------------------
 
@@ -126,7 +147,15 @@ CREATE TABLE IF NOT EXISTS `detalleventa` (
   PRIMARY KEY (`Iddetalleventa`),
   KEY `detalle-producto` (`Idproducto`),
   KEY `detalle-venta` (`Idventa`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `detalleventa`
+--
+
+INSERT INTO `detalleventa` (`Iddetalleventa`, `Cantidad`, `Descuento`, `PrecioUnitario`, `Importe`, `Idventa`, `Idproducto`) VALUES
+(1, 2, 0, 62, 124, 1, 1),
+(2, 3, 0, 104, 312, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -208,7 +237,17 @@ CREATE TABLE IF NOT EXISTS `producto` (
   KEY `producto-proveedor` (`Idproveedor`),
   KEY `producto-sub` (`Idsubcategoriaproducto`),
   KEY `producto-catgen` (`Idcategoriageneral`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`Idproducto`, `Nombre`, `Descripcion`, `Fechadeentrega`, `Stock`, `PrecioCompra`, `Color`, `Dimensiones`, `Idcategoriageneral`, `Idsubcategoriaproducto`, `Idproveedor`, `Codigo`) VALUES
+(1, 'Mueble individual', 'Madera ???, tela ???', '2019-10-07', 5, 310, 'Rojo', '??x??x??', 2, 8, 5, 1),
+(2, 'Muebles dobles', 'Madera ???, tela ???', '2019-09-03', 3, 312, 'Esmeralda', '??x??x??', 2, 4, 3, 2),
+(3, 'Puff', 'Madera ???, tela ???', '2019-11-05', 3, 108, 'Blanco', '??x??x??', 3, 9, 3, 3),
+(4, 'Mesa de centro', 'Madera ???, tela ???', '2019-11-14', 6, 330, 'Negro', '??x??x??', 1, 3, 5, 4);
 
 -- --------------------------------------------------------
 
@@ -251,7 +290,22 @@ CREATE TABLE IF NOT EXISTS `subcategoriaproducto` (
   `Idcategoriaproducto` int(11) NOT NULL,
   PRIMARY KEY (`Idsubcategoriaproducto`),
   KEY `sub_catpro` (`Idcategoriaproducto`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `subcategoriaproducto`
+--
+
+INSERT INTO `subcategoriaproducto` (`Idsubcategoriaproducto`, `Nombre`, `Idcategoriaproducto`) VALUES
+(1, 'Mesas grandes', 1),
+(2, 'Mesas medianas', 1),
+(3, 'Mesas pequeñas', 1),
+(4, 'Muebles dobles grandes', 3),
+(5, 'Muebles dobles pequeños', 3),
+(6, 'Silla de sala', 2),
+(7, 'Silla gamer', 2),
+(8, 'Muebles individuales grandes', 4),
+(9, 'Muebles individuales pequeños', 4);
 
 -- --------------------------------------------------------
 
@@ -316,7 +370,7 @@ CREATE TABLE IF NOT EXISTS `venta` (
   `Idventa` int(11) NOT NULL AUTO_INCREMENT,
   `Fecha` date NOT NULL,
   `Igv` double NOT NULL,
-  `PrecioTotalVenta` int(11) NOT NULL,
+  `PrecioTotalVenta` double NOT NULL,
   `Idusuario` int(11) NOT NULL,
   `Idempleado` int(11) NOT NULL,
   `Idtipoventa` int(11) NOT NULL,
@@ -324,7 +378,15 @@ CREATE TABLE IF NOT EXISTS `venta` (
   KEY `venta-empleado` (`Idempleado`),
   KEY `venta-tipoventa` (`Idtipoventa`),
   KEY `venta-usuario` (`Idusuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `venta`
+--
+
+INSERT INTO `venta` (`Idventa`, `Fecha`, `Igv`, `PrecioTotalVenta`, `Idusuario`, `Idempleado`, `Idtipoventa`) VALUES
+(1, '2019-11-20', 0.18, 124, 6, 3, 2),
+(2, '2019-11-19', 0.18, 312, 9, 4, 1);
 
 --
 -- Restricciones para tablas volcadas
