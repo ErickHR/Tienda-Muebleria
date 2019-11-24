@@ -2403,8 +2403,8 @@ span.email-notes {
 }
 
 #map {
-  width: 500px;
-  height: 500px;
+  width: 800px;
+  height: 400px
 }
 
 .work-img {
@@ -2526,4 +2526,9 @@ span.email-notes {
   right: 5px;
   top: 5px;
   position: absolute;
+}
+.btnAgregar{
+    position: absolute;
+    top: 295px;
+    right: 25px;
 }

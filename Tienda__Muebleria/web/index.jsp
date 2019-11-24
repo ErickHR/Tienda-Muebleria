@@ -11,16 +11,14 @@
 
     <head>
         <meta charset="utf-8">
-        <title>eBusiness Bootstrap Template</title>
+        <title>Muebleria</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
-        <link href="img/favicon.png" rel="icon">
+        <link href="img/favicon.png "rel="icon">
         <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
-        <link
-            href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900"
-            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet">
 
         <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
 
@@ -89,14 +87,14 @@
                                             <span class="icon-bar"></span>
                                         </button>
                                         <a class="navbar-brand page-scroll sticky-logo" href="index.html">
-                                            <h1><span>e</span>Business</h1>
+                                            <h1><img src="../../../logo.png" width="56" height="68"></h1>
                                         </a>
                                     </div>
                                     <div class="collapse navbar-collapse main-menu bs-example-navbar-collapse-1"
                                          id="navbar-example">
                                         <ul class="nav navbar-nav navbar-right">
                                             <li class="active">
-                                                <a class="page-scroll" href="#home">Home</a>
+                                                <a class="page-scroll" href="#home">Inicio</a>
                                             </li>
                                             <li>
                                                 <a class="page-scroll" href="#about">About</a>
@@ -311,8 +309,8 @@
                                                             </div>
                                                         </div>
                                                     </a>
+                                                    <div class="text-center btnAgregar"><button>Añadir</button></div>
                                                 </div>
-                                                <button class="btnAgregarCarrito">Añadir</button>
                                             </div>
 
 
@@ -487,7 +485,7 @@
                 </div>
             </div>
 
-            <div id="contact" class="contact-area">
+<!--            <div id="contact" class="contact-area">
                 <div class="contact-inner area-padding">
                     <div class="contact-overly"></div>
                     <div class="container ">
@@ -499,7 +497,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <!-- Start contact icon column -->
+                            <!-- Start contact icon column -9->
                             <div class="col-md-4 col-sm-4 col-xs-12">
                                 <div class="contact-icon text-center">
                                     <div class="single-icon">
@@ -511,7 +509,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Start contact icon column -->
+                            <!-- Start contact icon column --8>
                             <div class="col-md-4 col-sm-4 col-xs-12">
                                 <div class="contact-icon text-center">
                                     <div class="single-icon">
@@ -523,7 +521,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Start contact icon column -->
+                            <!-- Start contact icon column --8>
                             <div class="col-md-4 col-sm-4 col-xs-12">
                                 <div class="contact-icon text-center">
                                     <div class="single-icon">
@@ -538,18 +536,17 @@
                         </div>
                         <div class="row">
 
-                            <!-- Start Google Map -->
+                            <!-- Start Google Map -8->
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 <!-- Start Map 
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22864.11283411948!2d-73.96468908098944!3d40.630720240038435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sbg!4v1540447494452"
                                 width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
-                            End Map -->
-                                <div id="map"></div>
+                            End Map --8>
                             </div>
-                            <!-- End Google Map -->
+                            <!-- End Google Map --8>
 
-                            <!-- Start  contact -->
+                            <!-- Start  contact --8>
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 <div class="form contact-form">
                                     <div id="sendmessage">Your message has been sent. Thank you!</div>
@@ -582,27 +579,36 @@
                                     </form>
                                 </div>
                             </div>
-                            <!-- End Left contact -->
+                            <!-- End Left contact --8>
                         </div>
                     </div>
                 </div>
             </div>
-
+-->
             <footer>
                 <div class="footer-area">
                     <div class="container">
                         <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="section-headline text-center">
+                                    <h2>Contactanos</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!-- end single footer -->
                             <div class="col-md-4 col-sm-4 col-xs-12">
                                 <div class="footer-content">
                                     <div class="footer-head">
-                                        <div class="footer-logo">
-                                            <h2><span>e</span>Business</h2>
-                                        </div>
-
-                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                                            doloremque
-                                            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>
-                                        <div class="footer-icons">
+                                        <h4>Información</h4>
+                                        <p>
+                                            Calle Unión Mz.J Lt. 07, Prcela II - Parque Industrial Villa El Salvador
+                                        </p>
+                                        <div class="footer-contacts">
+                                            <p><span>Celular:</span> +51 979 126 324</p>
+                                            <p><span>E-mail:</span> maribelcarranzag0508@hotmail.com</p>
+                                            <p><span>Abierto:</span> 9am-5pm</p>
+                                            <div class="footer-icons">
                                             <ul>
                                                 <li>
                                                     <a href="#"><i class="fa fa-facebook"></i></a>
@@ -610,29 +616,8 @@
                                                 <li>
                                                     <a href="#"><i class="fa fa-twitter"></i></a>
                                                 </li>
-                                                <li>
-                                                    <a href="#"><i class="fa fa-google"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                                                </li>
                                             </ul>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end single footer -->
-                            <div class="col-md-4 col-sm-4 col-xs-12">
-                                <div class="footer-content">
-                                    <div class="footer-head">
-                                        <h4>information</h4>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-                                        </p>
-                                        <div class="footer-contacts">
-                                            <p><span>Tel:</span> +123 456 789</p>
-                                            <p><span>Email:</span> contact@example.com</p>
-                                            <p><span>Working Hours:</span> 9am-5pm</p>
                                         </div>
                                     </div>
                                 </div>
@@ -641,15 +626,7 @@
                             <div class="col-md-4 col-sm-4 col-xs-12">
                                 <div class="footer-content">
                                     <div class="footer-head">
-                                        <h4>Instagram</h4>
-                                        <div class="flicker-img">
-                                            <a href="#"><img src="img/portfolio/1.jpg" alt=""></a>
-                                            <a href="#"><img src="img/portfolio/2.jpg" alt=""></a>
-                                            <a href="#"><img src="img/portfolio/3.jpg" alt=""></a>
-                                            <a href="#"><img src="img/portfolio/4.jpg" alt=""></a>
-                                            <a href="#"><img src="img/portfolio/5.jpg" alt=""></a>
-                                            <a href="#"><img src="img/portfolio/6.jpg" alt=""></a>
-                                        </div>
+                                        <div id="map"></div>
                                     </div>
                                 </div>
                             </div>

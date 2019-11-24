@@ -53,3 +53,6 @@ function closeVentana(){
     $(".caja-logeo").slideUp("slow");
     document.getElementById("todo").style.display="block"
 }
+function btn(){
+    $(".btnAgregar").slideDown("slow");
+}
