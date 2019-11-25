@@ -8,4 +8,12 @@ $(function () {
     $.post("ProducListar", function (data) {
         $("#productos").html(data);
     });
+
+    $("#cbcatgen").on("change",function () {
+        var idCatGen = $("#cbcatgen").val();
+        $.post("ProducListarxCatGen",{idCatGen:idCatGen}, function (data) {
+            $("#productos").html(data);
+        });
+    });
+
 });

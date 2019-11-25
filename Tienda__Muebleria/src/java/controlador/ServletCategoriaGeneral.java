@@ -33,10 +33,10 @@ public class ServletCategoriaGeneral extends HttpServlet {
         if (path.equals("/catGenListar")) {
             ArrayList<CategoriaGeneral> lista = CategoriaGeneralDAO.listar();
             
-            out.print("<option>todos</option>");
+            out.print("<option value=\"0\">todos</option>");
             
             for (CategoriaGeneral x:lista ) {
-                out.print("<option id=\"" + x.getIdcategoriageneral() + "\">"+x.getNombre()+"</option>");
+                out.print("<option value=\"" + x.getIdcategoriageneral() + "\">"+x.getNombre()+"</option>");
                 
             }
         }

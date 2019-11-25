@@ -36,7 +36,7 @@ public class ServletCategoriaProducto extends HttpServlet {
             out.print("<option>todos</option>");
             
             for (CategoriaProducto x:lista ) {
-                out.print("<option id=\"" + x.getIdcategoriaproducto() + "\">"+x.getNombre()+"</option>");
+                out.print("<option value=\"" + x.getIdcategoriaproducto() + "\">"+x.getNombre()+"</option>");
                 
             }
         }
