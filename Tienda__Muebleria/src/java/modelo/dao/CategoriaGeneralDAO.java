@@ -29,16 +29,16 @@ public class CategoriaGeneralDAO {
         try {
             PreparedStatement ps = cn.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
+            while ( rs.next() ) {
                 catgen = new CategoriaGeneral();
-                catgen.setIdcategoriageneral(rs.getInt("idcatgoriageneral"));
+                catgen.setIdcategoriageneral(rs.getInt("idcategoriageneral"));
                 catgen.setNombre(rs.getString("nombre"));
                 lista.add(catgen);
             }
             rs.close();
             ps.close();
             cn.close();
-
+            System.out.println("lista enviado");
             return lista;
 
         } catch (SQLException ex) {

@@ -45,7 +45,6 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
-      out.write("<!doctype html>\r\n");
       out.write("<html lang=\"en\">\r\n");
       out.write("\r\n");
       out.write("    <head>\r\n");
@@ -79,9 +78,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("        <link href=\"css/style.css\" rel=\"stylesheet\">\r\n");
       out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("    </head>\r\n");
+      out.write("    </head> \r\n");
       out.write("\r\n");
       out.write("    <body data-spy=\"scroll\" data-target=\"#navbar-example\" class=\"body_cuerpo\">\r\n");
       out.write("        <div class=\"loguearme\">\r\n");
@@ -262,12 +259,10 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("                <div class=\"bg-light border-right\" id=\"sidebar-wrapper\">\r\n");
       out.write("                    <div class=\"list-group list-group-flush\">\r\n");
-      out.write("                        <div class=\"list-group-item list-group-item-action bg-light\">Categoria\r\n");
-      out.write("                            <select>\r\n");
-      out.write("                                <option>todos</option>\r\n");
-      out.write("                                <option>camas</option>\r\n");
-      out.write("                                <option>reposteria</option>\r\n");
-      out.write("                            </select>\r\n");
+      out.write("                        <div class=\"list-group-item list-group-item-action bg-light\">\r\n");
+      out.write("                            Categoria\r\n");
+      out.write("                            </br>\r\n");
+      out.write("                            <select id=\"sele\"></select>\r\n");
       out.write("                        </div>\r\n");
       out.write("                        <a href=\"#\" class=\"list-group-item list-group-item-action bg-light\">Shortcuts</a>\r\n");
       out.write("                        <a href=\"#\" class=\"list-group-item list-group-item-action bg-light\">Overview</a>\r\n");
@@ -711,7 +706,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <!--nuevas librerias-->\r\n");
       out.write("        <script src=\"lib/jquery/jquery-migrate.min.js\"></script>\r\n");
       out.write("        <script src=\"lib/popper/popper.min.js\"></script>\r\n");
-      out.write("        <script src=\"lib/counterup/jquery.waypoints.min.js\"></script>\r\n");
+      out.write("        <script\r\n");
+      out.write("        src=\"lib/counterup/jquery.waypoints.min.js\"></script>\r\n");
       out.write("        <script src=\"lib/counterup/jquery.counterup.js\"></script>\r\n");
       out.write("        <script src=\"lib/lightbox/js/lightbox.min.js\"></script>\r\n");
       out.write("        <script src=\"lib/typed/typed.min.js\"></script>\r\n");

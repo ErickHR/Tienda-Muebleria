@@ -39,9 +39,7 @@
 
         <link href="css/style.css" rel="stylesheet">
 
-
-
-    </head>
+    </head> 
 
     <body data-spy="scroll" data-target="#navbar-example" class="body_cuerpo">
         <div class="loguearme">
@@ -222,14 +220,16 @@
 
                 <div class="bg-light border-right" id="sidebar-wrapper">
                     <div class="list-group list-group-flush">
-                        <div class="list-group-item list-group-item-action bg-light">Categoria
-                            <select>
-                                <option>todos</option>
-                                <option>camas</option>
-                                <option>reposteria</option>
-                            </select>
+                        <div class="list-group-item list-group-item-action bg-light">
+                            Categoria General
+                            </br>
+                            <select id="cbcatgen"></select>
                         </div>
-                        <a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a>
+                        <div class="list-group-item list-group-item-action bg-light">
+                            Categoria de Productos
+                            </br>
+                            <select id="cbcatProduc"></select>
+                        </div>
                         <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
                         <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
                         <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
@@ -240,9 +240,6 @@
 
                     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                         <button class="btn btn-primary" id="menu-toggle"></button>
-
-
-
                     </nav>
 
                     <div class="container-fluid">
@@ -283,20 +280,22 @@
                                         </div>
                                         <div class="row">
 
+                                            <div id="productos">
+                                            </div>
 
+                                            <!--
                                             <div class="col-md-4">
                                                 <div class="work-box">
 
                                                     <div class="work-img">
-
-                                                        <a href="img/work-1.jpg" data-lightbox="gallery-mf">
-                                                            <img src="img/work-1.jpg" alt="" class="img-fluid">
+                                                        <a href="img/work-2.jpg" data-lightbox="gallery-mf">
+                                                            <img src="img/work-2.jpg" alt="" class="img-fluid">
                                                         </a>
                                                     </div>
                                                     <div class="work-content">
                                                         <div class="row">
                                                             <div class="col-sm-8">
-                                                                <h2 class="w-title">Lorem impsum dolor</h2>
+                                                                <h2 class="w-title">Loreda Cuno Nere</h2>
                                                                 <div class="w-more">
                                                                     <span class="w-ctegory">Web Design</span> / <span
                                                                         class="w-date">18 Sep. 2018</span>
@@ -309,137 +308,9 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="text-center btnAgregar"><button>Añadir</button></div>
                                                 </div>
                                             </div>
-
-
-                                            <div class="col-md-4">
-                                                <div class="work-box">
-                                                    <a href="img/work-2.jpg" data-lightbox="gallery-mf">
-                                                        <div class="work-img">
-                                                            <img src="img/work-2.jpg" alt="" class="img-fluid">
-                                                        </div>
-                                                        <div class="work-content">
-                                                            <div class="row">
-                                                                <div class="col-sm-8">
-                                                                    <h2 class="w-title">Loreda Cuno Nere</h2>
-                                                                    <div class="w-more">
-                                                                        <span class="w-ctegory">Web Design</span> / <span
-                                                                            class="w-date">18 Sep. 2018</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    <div class="w-like">
-                                                                        <span class="ion-ios-plus-outline"></span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="work-box">
-                                                    <a href="img/work-3.jpg" data-lightbox="gallery-mf">
-                                                        <div class="work-img">
-                                                            <img src="img/work-3.jpg" alt="" class="img-fluid">
-                                                        </div>
-                                                        <div class="work-content">
-                                                            <div class="row">
-                                                                <div class="col-sm-8">
-                                                                    <h2 class="w-title">Mavrito Lana Dere</h2>
-                                                                    <div class="w-more">
-                                                                        <span class="w-ctegory">Web Design</span> / <span
-                                                                            class="w-date">18 Sep. 2018</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    <div class="w-like">
-                                                                        <span class="ion-ios-plus-outline"></span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="work-box">
-                                                    <a href="img/work-4.jpg" data-lightbox="gallery-mf">
-                                                        <div class="work-img">
-                                                            <img src="img/work-4.jpg" alt="" class="img-fluid">
-                                                        </div>
-                                                        <div class="work-content">
-                                                            <div class="row">
-                                                                <div class="col-sm-8">
-                                                                    <h2 class="w-title">Bindo Laro Cado</h2>
-                                                                    <div class="w-more">
-                                                                        <span class="w-ctegory">Web Design</span> / <span
-                                                                            class="w-date">18 Sep. 2018</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    <div class="w-like">
-                                                                        <span class="ion-ios-plus-outline"></span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="work-box">
-                                                    <a href="img/work-5.jpg" data-lightbox="gallery-mf">
-                                                        <div class="work-img">
-                                                            <img src="img/work-5.jpg" alt="" class="img-fluid">
-                                                        </div>
-                                                        <div class="work-content">
-                                                            <div class="row">
-                                                                <div class="col-sm-8">
-                                                                    <h2 class="w-title">Studio Lena Mado</h2>
-                                                                    <div class="w-more">
-                                                                        <span class="w-ctegory">Web Design</span> / <span
-                                                                            class="w-date">18 Sep. 2018</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    <div class="w-like">
-                                                                        <span class="ion-ios-plus-outline"></span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="work-box">
-                                                    <a href="img/work-6.jpg" data-lightbox="gallery-mf">
-                                                        <div class="work-img">
-                                                            <img src="img/work-6.jpg" alt="" class="img-fluid">
-                                                        </div>
-                                                        <div class="work-content">
-                                                            <div class="row">
-                                                                <div class="col-sm-8">
-                                                                    <h2 class="w-title">Studio Big Bang</h2>
-                                                                    <div class="w-more">
-                                                                        <span class="w-ctegory">Web Design</span> / <span
-                                                                            class="w-date">18 Sep. 2017</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    <div class="w-like">
-                                                                        <span class="ion-ios-plus-outline"></span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-
+                                            -->
                                         </div>
                                     </div>
                                 </section>
@@ -671,7 +542,8 @@
         <!--nuevas librerias-->
         <script src="lib/jquery/jquery-migrate.min.js"></script>
         <script src="lib/popper/popper.min.js"></script>
-        <script src="lib/counterup/jquery.waypoints.min.js"></script>
+        <script
+        src="lib/counterup/jquery.waypoints.min.js"></script>
         <script src="lib/counterup/jquery.counterup.js"></script>
         <script src="lib/lightbox/js/lightbox.min.js"></script>
         <script src="lib/typed/typed.min.js"></script>
@@ -679,6 +551,7 @@
 
         <script src="js/main.js"></script>
         <script src="js/script.js"></script>
+        <script src="jquery/jquery.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDkAe1kWy0MJLRxYgRQK-qb5ZScX80sVg&callback=initMap"
         async defer></script>
     </body>

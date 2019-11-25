@@ -25,6 +25,7 @@ public class Producto {
     private int Idsubcategoriaproducto;
     private int Idproveedor;
     private int Codigo;
+    private String img;
 
     public int getIdproducto() {
         return Idproducto;
@@ -122,4 +123,12 @@ public class Producto {
         this.Codigo = Codigo;
     }
 
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+    
 }
