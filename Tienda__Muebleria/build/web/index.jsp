@@ -230,6 +230,11 @@
                             </br>
                             <select id="cbcatProduc"></select>
                         </div>
+                        <div class="list-group-item list-group-item-action bg-light">
+                            SubCategoria de Productos
+                            </br>
+                            <select id="cbSubcatProduc"></select>
+                        </div>
                         <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
                         <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
                         <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>

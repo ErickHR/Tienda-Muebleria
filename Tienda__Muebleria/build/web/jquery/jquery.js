@@ -15,5 +15,11 @@ $(function () {
             $("#productos").html(data);
         });
     });
+    $("#cbcatProduc").on("change",function () {
+        var idCatprod = $("#cbcatProduc").val();
+        $.post("SubCatProdlistarxCatProd",{idCatProd:idCatprod}, function (data) {
+            $("#cbSubcatProduc").html(data);
+        });
+    });
 
 });
