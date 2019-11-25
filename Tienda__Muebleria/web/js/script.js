@@ -56,3 +56,6 @@ function closeVentana(){
 function btn(){
     $(".btnAgregar").slideDown("slow");
 }
+function mostrar(saluda){
+    console.log(JSON.stringify(saluda));
+}

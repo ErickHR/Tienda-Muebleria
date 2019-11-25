@@ -125,7 +125,7 @@
                                                     <img src="img/carrito/shopping-cart (2).png" width="30px" height="30px">
                                                     <span class="caret"></span>
                                                 </a>
-                                                <ul class="dropdown-menu" role="menu">
+                                                <ul class="dropdown-menu" role="menu" id="carrito">
                                                     <li><a href=#>Drop Down 1</a></li>
                                                     <li><a href=#>Drop Down 2</a></li>
                                                 </ul>
@@ -222,6 +222,7 @@
                     <div class="list-group list-group-flush">
                         <div class="list-group-item list-group-item-action bg-light">
                             Categoria General
+                            <button onclick="mostrar('hola')">hazme clik</button>
                             </br>
                             <select id="cbcatgen"></select>
                         </div>
@@ -547,8 +548,7 @@
         <!--nuevas librerias-->
         <script src="lib/jquery/jquery-migrate.min.js"></script>
         <script src="lib/popper/popper.min.js"></script>
-        <script
-        src="lib/counterup/jquery.waypoints.min.js"></script>
+        <script src="lib/counterup/jquery.waypoints.min.js"></script>
         <script src="lib/counterup/jquery.counterup.js"></script>
         <script src="lib/lightbox/js/lightbox.min.js"></script>
         <script src="lib/typed/typed.min.js"></script>

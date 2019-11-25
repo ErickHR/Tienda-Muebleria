@@ -5,6 +5,7 @@
  */
 package controlador;
 
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ import modelo.dao.ProductoDAO;
  *
  * @author PARIS
  */
-@WebServlet(name = "ServletProducto", urlPatterns = {"/ServletProducto", "/ProducListar", "/ProducListarxCatGen"})
+@WebServlet(name = "ServletProducto", urlPatterns = {"/ServletProducto", "/ProducListar", "/ProducListarxCatGen", "/prodAgregar"})
 public class ServletProducto extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -34,6 +35,10 @@ public class ServletProducto extends HttpServlet {
 
             ArrayList<Producto> lista = ProductoDAO.listar();
             for (Producto x : lista) {
+
+                Gson gson = new Gson();
+                String json = gson.toJson(x);
+                System.out.println(json);
                 out.println("<div class=\"col-md-4\" >"
                         + "<div class=\"work-box\">"
                         + "<div class=\"work-img\">"
@@ -46,14 +51,15 @@ public class ServletProducto extends HttpServlet {
                         + "<div class=\"col-sm-8\">"
                         + "<h2 class=\"w-title\" id=\"" + x.getIdproducto() + "\">" + x.getNombre() + "</h2>"
                         + "<div >"
-                        + "<span>" + x.getDimensiones() + " </span>"
-                        + "<span>" + x.getDescripcion() + "</span>"
+                        + "<span>" + x.getDimensiones() + " </span><br/>"
+                        + "<span>" + x.getDescripcion() + "</span><br/>"
+                        + "<span>" + x.getPrecioCompra() + "</span><br/>"
                         + "</div>"
                         + "</div>"
                         + "</div>"
                         + "</div>"
                         + "<div class=\"text-center btnAgregar\">"
-                        + "<button>Añadir</button>"
+                        + "<button onclick=\"mostrar('{\"id\":\"juan\"}')\">Añadir</button>"
                         + "</div>"
                         + "</div>"
                         + "</div>");
@@ -69,9 +75,12 @@ public class ServletProducto extends HttpServlet {
             } else {
                 ArrayList<Producto> lista = ProductoDAO.listarxIdCatGen(idCatGen);
                 for (Producto x : lista) {
+                    Gson gson = new Gson();
+                    String json = gson.toJson(x);
                     out.println("<div class=\"col-md-4\" >"
                             + "<div class=\"work-box\">"
                             + "<div class=\"work-img\">"
+                            + "<form class=\"formx\">"
                             + "<a href=\"img/" + x.getImg() + "\" data-lightbox=\"gallery-mf\">"
                             + "<img src=\"img/" + x.getImg() + "\" alt=\"\" class=\"img-fluid\">"
                             + "</a>"
@@ -81,20 +90,27 @@ public class ServletProducto extends HttpServlet {
                             + "<div class=\"col-sm-8\">"
                             + "<h2 class=\"w-title\" id=\"" + x.getIdproducto() + "\">" + x.getNombre() + "</h2>"
                             + "<div >"
-                            + "<span>" + x.getDimensiones() + " </span>"
-                            + "<span>" + x.getDescripcion() + "</span>"
+                            + "<span>" + x.getDimensiones() + " </span><br/>"
+                            + "<span>" + x.getDescripcion() + "</span><br/>"
+                            + "<span>" + x.getPrecioCompra() + "</span><br/>"
                             + "</div>"
                             + "</div>"
                             + "</div>"
                             + "</div>"
                             + "<div class=\"text-center btnAgregar\">"
-                            + "<button>Añadir</button>"
+                            + "<button onclick=\"agregar(\"" + json + "\")\">Añadir</button>"
+                            + "</form>"
                             + "</div>"
                             + "</div>"
                             + "</div>");
 
                 }
             }
+        }
+
+        if (path.equals("/prodAgregar")) {
+            String json = request.getParameter("prod");
+            System.out.println(json);
         }
 
     }
