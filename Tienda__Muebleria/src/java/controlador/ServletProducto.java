@@ -22,20 +22,20 @@ import modelo.dao.ProductoDAO;
  */
 @WebServlet(name = "ServletProducto", urlPatterns = {"/ServletProducto", "/ProducListar", "/ProducListarxCatGen", "/prodAgregar", "/ProdlistarxBusqueda", "/ProdlistarxSubCatProdu"})
 public class ServletProducto extends HttpServlet {
-    
+
     private static ArrayList<Producto> carrito = new ArrayList<>();
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+
         String path = request.getServletPath();
         PrintWriter out = response.getWriter();
-        
+
         if (path.equals("/ProducListar")) {
             ArrayList<Producto> lista = ProductoDAO.listar();
             for (Producto x : lista) {
-                
+
                 out.println("<div class=\"col-md-4\" >"
                         + "<div class=\"work-box\">"
                         + "<div class=\"work-img\">"
@@ -60,12 +60,12 @@ public class ServletProducto extends HttpServlet {
                         + "</div>"
                         + "</div>"
                         + "</div>");
-                
+
             }
-            
+
         }
         if (path.equals("/ProducListarxCatGen")) {
-            
+
             int idCatGen = Integer.parseInt(request.getParameter("idCatGen"));
             if (idCatGen == 0) {
                 response.sendRedirect("ProducListar");
@@ -96,25 +96,25 @@ public class ServletProducto extends HttpServlet {
                             + "</div>"
                             + "</div>"
                             + "</div>");
-                    
+
                 }
             }
         }
-        
+
         if (path.equals("/prodAgregar")) {
             String id = request.getParameter("prod");
             Producto prod = ProductoDAO.Id(Integer.parseInt(id));
             carrito.add(prod);
-            
+
             for (Producto x : carrito) {
-                
-                out.println("<li><a href=#>" + x.getNombre() + "</a>"
-                        + "<INPUT TYPE=\"NUMBER\" MIN=\"0\" MAX=\""+ x.getStock() +"\" STEP=\"1\" VALUE=\"3\" SIZE=\"6\">"
+
+                out.println("<li class=\"carritoprod\"><a href=#>" + x.getNombre() + "</a>"
+                        + "<INPUT TYPE=\"NUMBER\" MIN=\"0\" MAX=\"" + x.getStock() + "\" STEP=\"1\" VALUE=\"3\" SIZE=\"6\">"
                         + "</li>");
             }
         }
         if (path.equals("/ProdlistarxBusqueda")) {
-            
+
             String nombre = request.getParameter("nomProd");
             ArrayList<Producto> lista = ProductoDAO.buscarNombre(nombre);
             for (Producto x : lista) {
@@ -145,37 +145,41 @@ public class ServletProducto extends HttpServlet {
             }
         }
         if (path.equals("/ProdlistarxSubCatProdu")) {
-            
+
             int id = Integer.parseInt(request.getParameter("idSubCatProd"));
-            ArrayList<Producto> lista = ProductoDAO.listarxIdSubCatProd(id);
-            for (Producto x : lista) {
-                out.println("<div class=\"col-md-4\" >"
-                        + "<div class=\"work-box\">"
-                        + "<div class=\"work-img\">"
-                        + "<a href=\"img/" + x.getImg() + "\" data-lightbox=\"gallery-mf\">"
-                        + "<img src=\"img/" + x.getImg() + "\" alt=\"\" class=\"img-fluid\">"
-                        + "</a>"
-                        + "</div>"
-                        + "<div class=\"work-content\">"
-                        + "<div class=\"row\">"
-                        + "<div class=\"col-sm-8\">"
-                        + "<h2 class=\"w-title\" id=\"" + x.getIdproducto() + "\">" + x.getNombre() + "</h2>"
-                        + "<div >"
-                        + "<span>" + x.getDimensiones() + " </span><br/>"
-                        + "<span>" + x.getDescripcion() + "</span><br/>"
-                        + "<span>" + x.getPrecioCompra() + "</span><br/>"
-                        + "</div>"
-                        + "</div>"
-                        + "</div>"
-                        + "</div>"
-                        + "<div class=\"text-center btnAgregar\">"
-                        + "<button onclick=\"agregar(" + x.getIdproducto() + ")\">Añadir</button>"
-                        + "</div>"
-                        + "</div>"
-                        + "</div>");
+            if (id == 0) {
+                response.sendRedirect("ProducListar");
+            } else {
+                ArrayList<Producto> lista = ProductoDAO.listarxIdSubCatProd(id);
+                for (Producto x : lista) {
+                    out.println("<div class=\"col-md-4\" >"
+                            + "<div class=\"work-box\">"
+                            + "<div class=\"work-img\">"
+                            + "<a href=\"img/" + x.getImg() + "\" data-lightbox=\"gallery-mf\">"
+                            + "<img src=\"img/" + x.getImg() + "\" alt=\"\" class=\"img-fluid\">"
+                            + "</a>"
+                            + "</div>"
+                            + "<div class=\"work-content\">"
+                            + "<div class=\"row\">"
+                            + "<div class=\"col-sm-8\">"
+                            + "<h2 class=\"w-title\" id=\"" + x.getIdproducto() + "\">" + x.getNombre() + "</h2>"
+                            + "<div >"
+                            + "<span>" + x.getDimensiones() + " </span><br/>"
+                            + "<span>" + x.getDescripcion() + "</span><br/>"
+                            + "<span>" + x.getPrecioCompra() + "</span><br/>"
+                            + "</div>"
+                            + "</div>"
+                            + "</div>"
+                            + "</div>"
+                            + "<div class=\"text-center btnAgregar\">"
+                            + "<button onclick=\"agregar(" + x.getIdproducto() + ")\">Añadir</button>"
+                            + "</div>"
+                            + "</div>"
+                            + "</div>");
+                }
             }
         }
-        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
