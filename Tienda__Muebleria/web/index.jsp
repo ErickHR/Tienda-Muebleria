@@ -93,33 +93,16 @@
                                                 <a class="page-scroll" href="#home">Inicio</a>
                                             </li>
                                             <li>
-                                                <a class="page-scroll" href="#about">About</a>
-                                            </li>
-                                            <li>
-                                                <a class="page-scroll" href="#services">Services</a>
-                                            </li>
-                                            <li>
-                                                <a class="page-scroll" href="#team">Team</a>
+                                                <a class="page-scroll" href="#wrapper">Productos</a>
                                             </li>
                                             <li>
                                                 <a class="page-scroll" href="#portfolio">Portfolio</a>
                                             </li>
-
-                                            <li class="dropdown"><a href="#" class="dropdown-toggle"
-                                                                    data-toggle="dropdown">Drop
-                                                    Down<span class="caret"></span></a>
-                                                <ul class="dropdown-menu" role="menu">
-                                                    <li><a href=#>Drop Down 1</a></li>
-                                                    <li><a href=#>Drop Down 2</a></li>
-                                                </ul>
-                                            </li>
-
-
                                             <li>
-                                                <a class="page-scroll" href="#blog">Blog</a>
+                                                <a class="page-scroll" href="#contact">Contactanos</a>
                                             </li>
                                             <li>
-                                                <a class="page-scroll" href="#contact">Contact</a>
+                                                <a class="page-scroll" href="#map">Ubicación</a>
                                             </li>
                                             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                                     <img src="img/carrito/shopping-cart (2).png" width="30px" height="30px">
@@ -219,8 +202,8 @@
             <div class="d-flex" id="wrapper">
 
                 <div class="bg-light border-right" id="sidebar-wrapper">
-                    <div class="list-group list-group-flush">
-                        <div class="list-group-item list-group-item-action bg-light">
+                    <div class="list-group list-group-flush" >
+                        <div class="list-group-item list-group-item-action bg-light" >
                             Categoria General
                             </br>
                             <select id="cbcatgen"></select>
@@ -488,7 +471,7 @@
                                             <div class="footer-icons">
                                                 <ul>
                                                     <li>
-                                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                                        <a href="https://www.facebook.com/Muebleria-MM-113375160131120/?modal=admin_todo_tour" target="_blank"><i class="fa fa-facebook"></i></a>
                                                     </li>
                                                     <li>
                                                         <a href="#"><i class="fa fa-twitter"></i></a>

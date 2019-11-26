@@ -27,6 +27,12 @@ $(function () {
             $("#productos").html(data);
         });
     });
+    $("#cbSubcatProduc").change(function () {
+        var idSubCatProduc = $("#cbSubcatProduc").val();
+        $.post("ProdlistarxSubCatProdu",{idSubCatProd:idSubCatProduc}, function (data) {
+            $("#productos").html(data);
+        });
+    });
     
 
 });

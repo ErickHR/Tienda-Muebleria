@@ -261,7 +261,6 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <div class=\"list-group list-group-flush\">\r\n");
       out.write("                        <div class=\"list-group-item list-group-item-action bg-light\">\r\n");
       out.write("                            Categoria General\r\n");
-      out.write("                            <button onclick=\"mostrar('hola')\">hazme clik</button>\r\n");
       out.write("                            </br>\r\n");
       out.write("                            <select id=\"cbcatgen\"></select>\r\n");
       out.write("                        </div>\r\n");
@@ -295,9 +294,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                <form>\r\n");
       out.write("                                    <div class=\"input-group\">\r\n");
       out.write("                                        <input type=\"text\" class=\"form-control\" placeholder=\"Productos\"\r\n");
-      out.write("                                               aria-label=\"Search for...\">\r\n");
+      out.write("                                               aria-label=\"Search for...\" id=\"txtbusqueda\">\r\n");
       out.write("                                        <span class=\"input-group-btn\">\r\n");
-      out.write("                                            <button class=\"btn btn-secondary btn-search\" type=\"button\">\r\n");
+      out.write("                                            <button class=\"btn btn-secondary btn-search\" type=\"button\" id=\"btnbusqueda\">\r\n");
       out.write("                                                <span class=\"ion-android-search\"></span>\r\n");
       out.write("                                            </button>\r\n");
       out.write("                                        </span>\r\n");
@@ -317,7 +316,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                                        sillas\r\n");
       out.write("                                                    </h3>\r\n");
       out.write("                                                    <p class=\"subtitle-a\">\r\n");
-      out.write("                                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.\r\n");
+      out.write("                                                        Lorem ipsum, dolor sit amet consectetur adipisicing elitsaf\r\n");
+      out.write("                                                        \r\n");
       out.write("                                                    </p>\r\n");
       out.write("                                                    <div class=\"line-mf\"></div>\r\n");
       out.write("                                                </div>\r\n");
