@@ -38,7 +38,6 @@ public class CategoriaGeneralDAO {
             rs.close();
             ps.close();
             cn.close();
-            System.out.println("lista enviado");
             return lista;
 
         } catch (SQLException ex) {

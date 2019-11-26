@@ -261,6 +261,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <div class=\"list-group list-group-flush\">\r\n");
       out.write("                        <div class=\"list-group-item list-group-item-action bg-light\">\r\n");
       out.write("                            Categoria General\r\n");
+      out.write("                            <button onclick=\"mostrar('hola')\">hazme clik</button>\r\n");
       out.write("                            </br>\r\n");
       out.write("                            <select id=\"cbcatgen\"></select>\r\n");
       out.write("                        </div>\r\n");
@@ -586,8 +587,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <!--nuevas librerias-->\r\n");
       out.write("        <script src=\"lib/jquery/jquery-migrate.min.js\"></script>\r\n");
       out.write("        <script src=\"lib/popper/popper.min.js\"></script>\r\n");
-      out.write("        <script\r\n");
-      out.write("        src=\"lib/counterup/jquery.waypoints.min.js\"></script>\r\n");
+      out.write("        <script src=\"lib/counterup/jquery.waypoints.min.js\"></script>\r\n");
       out.write("        <script src=\"lib/counterup/jquery.counterup.js\"></script>\r\n");
       out.write("        <script src=\"lib/lightbox/js/lightbox.min.js\"></script>\r\n");
       out.write("        <script src=\"lib/typed/typed.min.js\"></script>\r\n");

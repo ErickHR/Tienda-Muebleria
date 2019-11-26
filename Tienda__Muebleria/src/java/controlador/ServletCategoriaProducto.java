@@ -33,7 +33,7 @@ public class ServletCategoriaProducto extends HttpServlet {
             //idcat viene via ajax de la vista formcategorias.jsp
             ArrayList<CategoriaProducto> lista = CategoriaProductoDAO.listar();
             
-            out.print("<option>todos</option>");
+            out.print("<option value=\"0\">todos</option>");
             
             for (CategoriaProducto x:lista ) {
                 out.print("<option value=\"" + x.getIdcategoriaproducto() + "\">"+x.getNombre()+"</option>");

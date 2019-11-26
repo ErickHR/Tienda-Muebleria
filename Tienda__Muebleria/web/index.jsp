@@ -222,7 +222,6 @@
                     <div class="list-group list-group-flush">
                         <div class="list-group-item list-group-item-action bg-light">
                             Categoria General
-                            <button onclick="mostrar('hola')">hazme clik</button>
                             </br>
                             <select id="cbcatgen"></select>
                         </div>
@@ -256,9 +255,9 @@
                                 <form>
                                     <div class="input-group">
                                         <input type="text" class="form-control" placeholder="Productos"
-                                               aria-label="Search for...">
+                                               aria-label="Search for..." id="txtbusqueda">
                                         <span class="input-group-btn">
-                                            <button class="btn btn-secondary btn-search" type="button">
+                                            <button class="btn btn-secondary btn-search" type="button" id="btnbusqueda">
                                                 <span class="ion-android-search"></span>
                                             </button>
                                         </span>
@@ -278,7 +277,8 @@
                                                         sillas
                                                     </h3>
                                                     <p class="subtitle-a">
-                                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                                        Lorem ipsum, dolor sit amet consectetur adipisicing elitsaf
+                                                        
                                                     </p>
                                                     <div class="line-mf"></div>
                                                 </div>

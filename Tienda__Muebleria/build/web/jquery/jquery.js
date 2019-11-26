@@ -16,9 +16,15 @@ $(function () {
         });
     });
     $("#cbcatProduc").on("change",function () {
-        var idCatprod = $("#cbcatProduc").val();
-        $.post("SubCatProdlistarxCatProd",{idCatProd:idCatprod}, function (data) {
+        var idCatproduct = $("#cbcatProduc").val();
+        $.post("SubCatProdlistarxCatProd",{idCatProd:idCatproduct}, function (data) {
             $("#cbSubcatProduc").html(data);
+        });
+    });
+    $("#txtbusqueda").keyup(function () {
+        var nomproduct = $("#txtbusqueda").val();
+        $.post("ProdlistarxBusqueda",{nomProd:nomproduct}, function (data) {
+            $("#productos").html(data);
         });
     });
     

@@ -37,18 +37,22 @@ public class ServletSubCategoriaProducto extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         String path = request.getServletPath();
-        
-        if( path.equals("/SubCatProdlistarxCatProd") ){
-            int idcatprod = Integer.parseInt( request.getParameter("idCatProd") );
-            ArrayList<Subcategoriaproducto> lista = SubCategoriaProductoDAO.listarxCatProd(idcatprod);
-            
-            for (Subcategoriaproducto x : lista) {
-                out.println("<option value=\"" + x.getIdsubcategoriaproducto() + "\">" + x.getNombre() + "</option");
+
+        if (path.equals("/SubCatProdlistarxCatProd")) {
+            int idcatprod = Integer.parseInt(request.getParameter("idCatProd"));
+            ArrayList<Subcategoriaproducto> lista;
+            if (idcatprod == 0) {
+                lista = SubCategoriaProductoDAO.listar();
+            } else {
+                lista = SubCategoriaProductoDAO.listarxCatProd(idcatprod);
             }
-            
+            out.println("<option value=\"0\">todos</option>");
+            for (Subcategoriaproducto x : lista) {
+                out.println("<option value=\"" + x.getIdsubcategoriaproducto() + "\">" + x.getNombre() + "</option>");
+            }
+
         }
-        
-        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

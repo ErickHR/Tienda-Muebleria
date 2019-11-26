@@ -56,6 +56,10 @@ function closeVentana(){
 function btn(){
     $(".btnAgregar").slideDown("slow");
 }
-function mostrar(saluda){
-    console.log(JSON.stringify(saluda));
+function agregar(json){
+    
+    $.post("prodAgregar", {prod:json}, function (res){
+        $("#carrito").html(res);
+    })
+    
 }

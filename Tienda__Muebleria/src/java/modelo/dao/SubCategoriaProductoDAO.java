@@ -55,7 +55,7 @@ public class SubCategoriaProductoDAO {
         Subcategoriaproducto prod = null;
 
         Connection cn = Conexion.abrir();
-        String sql = "select * from Subcategoriaproducto where idcategoriaproducto = ?";
+        String sql = "select * from subcategoriaproducto where idcategoriaproducto = ?";
         try {
             PreparedStatement ps = cn.prepareStatement(sql);
             ps.setInt(1, idCatProd);
@@ -65,7 +65,6 @@ public class SubCategoriaProductoDAO {
                 prod.setIdsubcategoriaproducto(rs.getInt("idSubcategoriaproducto"));
                 prod.setNombre(rs.getString("nombre"));
                 prod.setIdcategoriaproducto(rs.getInt("idcategoriaproducto"));
-                
                 lista.add(prod);
             }
             rs.close();
