@@ -175,6 +175,7 @@ public class ProductoDAO {
                 prod.setDimensiones(rs.getString("dimensiones"));
                 prod.setImg(rs.getString("img"));
                 prod.setPrecioCompra(rs.getDouble("PrecioCompra"));
+                prod.setStock(rs.getInt("stock"));
                                 
                 lista.add(prod);
             }

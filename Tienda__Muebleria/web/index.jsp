@@ -109,8 +109,6 @@
                                                     <span class="caret"></span>
                                                 </a>
                                                 <ul class="dropdown-menu" role="menu" id="carrito">
-                                                    <li><a href=#>Drop Down 1</a></li>
-                                                    <li><a href=#>Drop Down 2</a></li>
                                                 </ul>
                                             </li>
                                             <li>

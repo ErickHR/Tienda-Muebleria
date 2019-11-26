@@ -108,7 +108,9 @@ public class ServletProducto extends HttpServlet {
             
             for (Producto x : carrito) {
                 
-                out.println("<li><a href=#><img src=\"img/" + x.getImg() + "\" height=\"20px\" width=\"25px\" >" + x.getNombre() + "</a></li>");
+                out.println("<li><a href=#>" + x.getNombre() + "</a>"
+                        + "<INPUT TYPE=\"NUMBER\" MIN=\"0\" MAX=\""+ x.getStock() +"\" STEP=\"1\" VALUE=\"3\" SIZE=\"6\">"
+                        + "</li>");
             }
         }
         if (path.equals("/ProdlistarxBusqueda")) {
