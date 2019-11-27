@@ -145,7 +145,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                                <a class=\"page-scroll\" href=\"#map\">Ubicación</a>\n");
       out.write("                                            </li>\n");
       out.write("                                            <li>\n");
-      out.write("                                                <a href=\"producVer\"  class=\"page-scroll\" >Ver Carrito</a>\n");
+      out.write("                                                <a href=\"producVer?\" id=\"verCarrito\" class=\"page-scroll\" >Ver Carrito</a>\n");
       out.write("                                            </li>\n");
       out.write("                                            <li class=\"dropdown\"><a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n");
       out.write("                                                    <img src=\"img/carrito/shopping-cart (2).png\" width=\"30px\" height=\"30px\">\n");
@@ -327,7 +327,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                                                            <img src=\"img/1m.jpg\" alt=\"\" />\n");
       out.write("                                                                            <h2>$56</h2>\n");
       out.write("                                                                            <p>Easy Polo Black Edition</p>\n");
-      out.write("                                                                            <a href=\"#\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>Add to cart</a>\n");
+      out.write("                                                                            <a href=\"#\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>AGREGAR</a>\n");
       out.write("                                                                        </div>\n");
       out.write("\n");
       out.write("                                                                    </div>\n");
@@ -340,7 +340,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                                                            <img src=\"img/1m.jpg\" alt=\"\" />\n");
       out.write("                                                                            <h2>$56</h2>\n");
       out.write("                                                                            <p>Easy Polo Black Edition</p>\n");
-      out.write("                                                                            <a href=\"#\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>Add to cart</a>\n");
+      out.write("                                                                            <a href=\"#\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>AGREGAR</a>\n");
       out.write("                                                                        </div>\n");
       out.write("\n");
       out.write("                                                                    </div>\n");
@@ -353,7 +353,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                                                            <img src=\"img/1m.jpg\" alt=\"\" />\n");
       out.write("                                                                            <h2>$56</h2>\n");
       out.write("                                                                            <p>Easy Polo Black Edition</p>\n");
-      out.write("                                                                            <a href=\"#\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>Add to cart</a>\n");
+      out.write("                                                                            <a href=\"#\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>AGREGAR</a>\n");
       out.write("                                                                        </div>\n");
       out.write("\n");
       out.write("                                                                    </div>\n");
@@ -368,7 +368,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                                                            <img src=\"img/1m.jpg\" alt=\"\" />\n");
       out.write("                                                                            <h2>$56</h2>\n");
       out.write("                                                                            <p>Easy Polo Black Edition</p>\n");
-      out.write("                                                                            <a href=\"#\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>Add to cart</a>\n");
+      out.write("                                                                            <a href=\"#\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>AGREGAR</a>\n");
       out.write("                                                                        </div>\n");
       out.write("\n");
       out.write("                                                                    </div>\n");
@@ -381,7 +381,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                                                            <img src=\"img/1m.jpg\" alt=\"\" />\n");
       out.write("                                                                            <h2>$56</h2>\n");
       out.write("                                                                            <p>Easy Polo Black Edition</p>\n");
-      out.write("                                                                            <a href=\"#\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>Add to cart</a>\n");
+      out.write("                                                                            <a href=\"#\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>AGREGAR</a>\n");
       out.write("                                                                        </div>\n");
       out.write("\n");
       out.write("                                                                    </div>\n");
@@ -394,7 +394,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                                                            <img src=\"img/1m.jpg\" alt=\"\" />\n");
       out.write("                                                                            <h2>$56</h2>\n");
       out.write("                                                                            <p>Easy Polo Black Edition</p>\n");
-      out.write("                                                                            <a href=\"#\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>Add to cart</a>\n");
+      out.write("                                                                            <a href=\"#\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>AGREGAR</a>\n");
       out.write("                                                                        </div>\n");
       out.write("\n");
       out.write("                                                                    </div>\n");

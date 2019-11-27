@@ -235,6 +235,7 @@ public class ServletProducto extends HttpServlet {
         if (path.equals("/producVer")) {
 
             request.setAttribute("listaCarrito", carrito);
+            request.setAttribute("listapedido", listapedido);
             request.getRequestDispatcher("WEB-INF/tabla.jsp").forward(request, response);
         }
     }

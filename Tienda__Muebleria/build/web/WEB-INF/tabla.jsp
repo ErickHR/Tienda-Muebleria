@@ -4,6 +4,7 @@
     Author     : Rivas
 --%>
 
+<%@page import="modelo.bean.Pedido"%>
 <%@page import="modelo.bean.Producto"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -19,11 +20,13 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </head>
     <body>
-        
+
         <%
-            ArrayList<Producto> lista = (ArrayList<Producto>) request.getAttribute("listaCarrito");
+            ArrayList<Producto> listacar = (ArrayList<Producto>) request.getAttribute("listaCarrito");
+            ArrayList<Pedido> listaped = (ArrayList<Pedido>) request.getAttribute("listapedido");
+            int i = 0;
         %>
-        
+
         <nav class="navbar navbar-expand-lg ">
             <a class="navbar-brand"><h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;POLOSMANIA</h1></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,25 +67,29 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <%for(Producto x:lista){%>
-                                <tr>
-                                    <td><%=x.getIdproducto()%></td>
-                                    <td><%=x.getNombre()%></td>
-                                    <td><%=x.getDescripcion()%>
-                                        <img src="ServletImg?id=<%=x.getIdproducto()%>" width="100" height="100">
-                                    </td>
-                                    <td><%=x.getPrecioCompra()%></td>
-                                    <td>
-                                        <input type="hidden" id="idpro" value="<%=x.getIdproducto()%>">
-                                        <input type="number" id="Cantidad" value="5" class="form-control text-center" min="1">
-                                    </td>
-                                    <td>150</td>
-                                    <td>
-                                        <input type="hidden" id="idp" value="">
-                                        <a href="#" id="btnDelete">Eliminar</a>
-                                    </td>
-                                </tr>
-                             <%}%>
+                            <%  for (Producto x : listacar) {%>
+
+                            <tr>
+                                <td><%=x.getIdproducto()%></td>
+                                <td><%=x.getNombre()%></td>
+                                <td><%=x.getDescripcion()%>
+                                    <img src="ServletImg?id=<%=x.getIdproducto()%>" width="100" height="100">
+                                </td>
+                                <td><%=x.getPrecioCompra()%></td>
+                                <td>
+                                    <input type="hidden" id="idpro" value="<%=x.getIdproducto()%>">
+                                    <input type="number" id="Cantidad" value="<%=listaped.get(i).getCantidad()%>" class="form-control text-center" min="1">
+                                </td>
+                                <td>150</td>
+                                <td>
+                                    <input type="hidden" id="idp" value="">
+                                    <a href="#" id="btnDelete">Eliminar</a>
+                                </td>
+                            </tr>
+                            <%
+                                    i++;
+                                }
+                            %>
                         </tbody>
                     </table>
                 </div>
@@ -101,11 +108,11 @@
                         </div>
                         <div class="card-footer">
                             <% HttpSession sesion = request.getSession();
-                                    if(sesion.getAttribute("user")==null){
-                                %>
+                                if (sesion.getAttribute("user") == null) {
+                            %>
                             <a href="login.jsp" class="btn btn-info btn-block">Iniciar Sesion</a>
                             <a href="registro.jsp" class="btn btn-danger btn-block">Registrar</a>
-                            <% } else{%>
+                            <% } else {%>
                             <a href="pago.jsp" class="btn btn-info btn-block">Realizar Pago</a>
                             <a href="detalle.jsp" class="btn btn-danger btn-block">Generar Compra</a><%}%>
                         </div>
