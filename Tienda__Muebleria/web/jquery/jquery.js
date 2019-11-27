@@ -1,4 +1,7 @@
 $(function () {
+    $.post("prodAgregar", {prod: 0}, function (res) {
+        $("#carrito").html(res);
+    })
     $.post("catGenListar", function (data) {
         $("#cbcatgen").html(data);
     });

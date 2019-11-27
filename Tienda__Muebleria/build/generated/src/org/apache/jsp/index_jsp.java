@@ -144,6 +144,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                            <li>\n");
       out.write("                                                <a class=\"page-scroll\" href=\"#map\">Ubicación</a>\n");
       out.write("                                            </li>\n");
+      out.write("                                            <li>\n");
+      out.write("                                                <a href=\"producVer\"  class=\"page-scroll\" >Ver Carrito</a>\n");
+      out.write("                                            </li>\n");
       out.write("                                            <li class=\"dropdown\"><a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n");
       out.write("                                                    <img src=\"img/carrito/shopping-cart (2).png\" width=\"30px\" height=\"30px\">\n");
       out.write("                                                    <span class=\"caret\"></span>\n");

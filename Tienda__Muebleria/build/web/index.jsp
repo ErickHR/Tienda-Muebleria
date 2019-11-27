@@ -105,6 +105,9 @@
                                             <li>
                                                 <a class="page-scroll" href="#map">Ubicación</a>
                                             </li>
+                                            <li>
+                                                <a href="producVer?" id="verCarrito" class="page-scroll" >Ver Carrito</a>
+                                            </li>
                                             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                                     <img src="img/carrito/shopping-cart (2).png" width="30px" height="30px">
                                                     <span class="caret"></span>
@@ -285,7 +288,7 @@
                                                                             <img src="img/1m.jpg" alt="" />
                                                                             <h2>$56</h2>
                                                                             <p>Easy Polo Black Edition</p>
-                                                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>AGREGAR</a>
                                                                         </div>
 
                                                                     </div>
@@ -298,7 +301,7 @@
                                                                             <img src="img/1m.jpg" alt="" />
                                                                             <h2>$56</h2>
                                                                             <p>Easy Polo Black Edition</p>
-                                                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>AGREGAR</a>
                                                                         </div>
 
                                                                     </div>
@@ -311,7 +314,7 @@
                                                                             <img src="img/1m.jpg" alt="" />
                                                                             <h2>$56</h2>
                                                                             <p>Easy Polo Black Edition</p>
-                                                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>AGREGAR</a>
                                                                         </div>
 
                                                                     </div>
@@ -326,7 +329,7 @@
                                                                             <img src="img/1m.jpg" alt="" />
                                                                             <h2>$56</h2>
                                                                             <p>Easy Polo Black Edition</p>
-                                                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>AGREGAR</a>
                                                                         </div>
 
                                                                     </div>
@@ -339,7 +342,7 @@
                                                                             <img src="img/1m.jpg" alt="" />
                                                                             <h2>$56</h2>
                                                                             <p>Easy Polo Black Edition</p>
-                                                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>AGREGAR</a>
                                                                         </div>
 
                                                                     </div>
@@ -352,7 +355,7 @@
                                                                             <img src="img/1m.jpg" alt="" />
                                                                             <h2>$56</h2>
                                                                             <p>Easy Polo Black Edition</p>
-                                                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>AGREGAR</a>
                                                                         </div>
 
                                                                     </div>

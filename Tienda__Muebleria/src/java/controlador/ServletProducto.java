@@ -13,17 +13,20 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modelo.bean.Pedido;
 import modelo.bean.Producto;
+import modelo.dao.PedidoDAO;
 import modelo.dao.ProductoDAO;
 
 /**
  *
  * @author PARIS
  */
-@WebServlet(name = "ServletProducto", urlPatterns = {"/ServletProducto", "/ProducListar", "/ProducListarxCatGen", "/prodAgregar", "/ProdlistarxBusqueda", "/ProdlistarxSubCatProdu", "/prodBorrar"})
+@WebServlet(name = "ServletProducto", urlPatterns = {"/ServletProducto", "/ProducListar", "/ProducListarxCatGen", "/prodAgregar", "/ProdlistarxBusqueda", "/ProdlistarxSubCatProdu", "/prodBorrar", "/producVer"})
 public class ServletProducto extends HttpServlet {
 
     private static ArrayList<Producto> carrito = new ArrayList<>();
+    private static ArrayList<Pedido> listapedido = new ArrayList<Pedido>();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -56,7 +59,7 @@ public class ServletProducto extends HttpServlet {
                         + "</div>"
                         + "</div>"
                         + "<div class=\"text-center btnAgregar\">"
-                        + "<button onclick=\"agregar(" + x.getIdproducto() + ")\">Añadir</button>"
+                        + "<button onclick=\"agregar(" + x.getIdproducto() + ")\"><i class=\"fa fa-shopping-cart\"></i> Agregar</button>"
                         + "</div>"
                         + "</div>"
                         + "</div>");
@@ -92,7 +95,7 @@ public class ServletProducto extends HttpServlet {
                             + "</div>"
                             + "</div>"
                             + "<div class=\"text-center btnAgregar\">"
-                            + "<button onclick=\"agregar(" + x.getIdproducto() + ")\">Añadir</button>"
+                            + "<button onclick=\"agregar(" + x.getIdproducto() + ")\"><i class=\"fa fa-shopping-cart\"></i> Agregar</button>"
                             + "</div>"
                             + "</div>"
                             + "</div>");
@@ -102,20 +105,43 @@ public class ServletProducto extends HttpServlet {
         }
 
         if (path.equals("/prodAgregar")) {
-            String id = request.getParameter("prod");
-            Producto prod = ProductoDAO.Id(Integer.parseInt(id));
+            int id = Integer.parseInt(request.getParameter("prod"));
+            Producto prod = ProductoDAO.Id(id);
             Producto compr = new Producto();
-            if (!compr.esta(carrito, prod)) {
-                carrito.add(prod);
-            }
 
+            Pedido ped = new Pedido();
+            int cantidad = 0;
+            int i = 0;
+            if (prod != null && !compr.esta(carrito, prod)) {
+                carrito.add(prod);
+                ped.setIdProducto(id);
+                ped.setCantidad(1);
+                cantidad = ped.getCantidad();
+                listapedido.add(ped);
+            } else if (prod != null && compr.esta(carrito, prod)) {
+
+                for (Pedido p : listapedido) {
+                    
+                    if (p.getIdProducto() == prod.getIdproducto()) {
+                        listapedido.get(i).setCantidad(p.getCantidad()+1);
+                        System.out.println(p.getCantidad());
+                        System.out.println(cantidad);
+                        continue;
+                    }
+                    i++;
+                }
+
+            }
+            i = 0;
             for (Producto x : carrito) {
 
                 out.println("<li class=\"carritoprod\"><a href=# style=\"color: #24b67e\">" + x.getNombre() + "</a>"
-                        + "<INPUT TYPE=\"NUMBER\" id=\"Cantidad\" MIN=\"0\" MAX=\"" + x.getStock() + "\" STEP=\"1\" VALUE=\"3\" SIZE=\"6\">"
+                        + "<INPUT TYPE=\"NUMBER\" id=\"Cantidad\" MIN=\"0\" MAX=\"" + x.getStock() + "\" STEP=\"1\" VALUE=\"" + listapedido.get(i).getCantidad() + "\" SIZE=\"6\">"
                         + "<button class=\"btnborrar\" onclick=\"borrar(" + x.getIdproducto() + ")\"><img src=\"img/delete-red.png\" width=\"20px\" height=\"20px\"></button>"
                         + "</li>");
+                i++;
             }
+            cantidad = 0;
         }
         if (path.equals("/ProdlistarxBusqueda")) {
 
@@ -142,7 +168,7 @@ public class ServletProducto extends HttpServlet {
                         + "</div>"
                         + "</div>"
                         + "<div class=\"text-center btnAgregar\">"
-                        + "<button onclick=\"agregar(" + x.getIdproducto() + ")\">Añadir</button>"
+                        + "<button onclick=\"agregar(" + x.getIdproducto() + ")\"><i class=\"fa fa-shopping-cart\"></i> Agregar</button>"
                         + "</div>"
                         + "</div>"
                         + "</div>");
@@ -176,7 +202,7 @@ public class ServletProducto extends HttpServlet {
                             + "</div>"
                             + "</div>"
                             + "<div class=\"text-center btnAgregar\">"
-                            + "<button onclick=\"agregar(" + x.getIdproducto() + ")\">Añadir</button>"
+                            + "<button onclick=\"agregar(" + x.getIdproducto() + ")\"><i class=\"fa fa-shopping-cart\"></i> Agregar</button>"
                             + "</div>"
                             + "</div>"
                             + "</div>");
@@ -187,14 +213,15 @@ public class ServletProducto extends HttpServlet {
             String id = request.getParameter("idpr");
             ArrayList<Producto> newa = new ArrayList<>();
             Producto prod = ProductoDAO.Id(Integer.parseInt(id));
-            
-            for( Producto x : carrito ){
-                if(x.getIdproducto() != prod.getIdproducto())
+
+            for (Producto x : carrito) {
+                if (x.getIdproducto() != prod.getIdproducto()) {
                     newa.add(x);
+                }
             }
             carrito.clear();
-            for( Producto x : newa ){
-                    carrito.add(x);
+            for (Producto x : newa) {
+                carrito.add(x);
             }
 
             for (Producto x : carrito) {
@@ -204,6 +231,11 @@ public class ServletProducto extends HttpServlet {
                         + "<button class=\"btnborrar\" onclick=\"borrar(" + x.getIdproducto() + ")\"><img src=\"img/delete-red.png\" width=\"20px\" height=\"20px\"></button>"
                         + "</li>");
             }
+        }
+        if (path.equals("/producVer")) {
+
+            request.setAttribute("listaCarrito", carrito);
+            request.getRequestDispatcher("WEB-INF/tabla.jsp").forward(request, response);
         }
     }
 
