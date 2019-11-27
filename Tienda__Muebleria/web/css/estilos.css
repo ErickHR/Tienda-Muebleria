@@ -13,6 +13,34 @@ and open the template in the editor.
 #wrapper{
     padding-top: 20px;
 }
+#sticker{
+    opacity: 0.6
+}
 #sidebar-wrapper,.list-group-item{
     
+}
+.carritoprod{
+    border: 0.1px solid white;
+}
+#carrito{
+    height: 350px;
+    overflow: auto;
+}
+#Cantidad{
+    position: relative;
+    bottom: 5px;
+    color: black;
+}
+.btnborrar{
+    background: black;
+    border: black;
+}
+.imgcarrito{
+    width: 960px;
+    height: 190px;
+}
+
+#recommended-item-carousel{
+    display: inline-block;
+    margin: 50px;
 }

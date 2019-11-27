@@ -3,20 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Rivas/Desktop/Tienda-Muebleria/Tienda__Muebleria/src/java/controlador/ServletSubCategoriaProducto.java</file>
-            <file>file:/C:/Users/Rivas/Desktop/Tienda-Muebleria/Tienda__Muebleria/src/java/coneccion/Conexion.java</file>
-            <file>file:/C:/Users/Rivas/Desktop/Tienda-Muebleria/Tienda__Muebleria/web/index.jsp</file>
-            <file>file:/C:/Users/Rivas/Desktop/Tienda-Muebleria/Tienda__Muebleria/src/java/modelo/dao/SubCategoriaProductoDAO.java</file>
-            <file>file:/C:/Users/Rivas/Desktop/Tienda-Muebleria/Tienda__Muebleria/web/css/style.css</file>
-            <file>file:/C:/Users/Rivas/Desktop/Tienda-Muebleria/Tienda__Muebleria/web/js/script.js</file>
-            <file>file:/C:/Users/Rivas/Desktop/Tienda-Muebleria/Tienda__Muebleria/src/java/modelo/dao/UsuarioDAO.java</file>
-            <file>file:/C:/Users/Rivas/Desktop/Tienda-Muebleria/Tienda__Muebleria/src/java/controlador/ServletCategoriaProducto.java</file>
-            <file>file:/C:/Users/Rivas/Desktop/Tienda-Muebleria/Tienda__Muebleria/src/java/modelo/dao/CategoriaProductoDAO.java</file>
-            <file>file:/C:/Users/Rivas/Desktop/Tienda-Muebleria/Tienda__Muebleria/src/java/controlador/ServletProducto.java</file>
-            <file>file:/C:/Users/Rivas/Desktop/Tienda-Muebleria/Tienda__Muebleria/src/java/modelo/dao/ProductoDAO.java</file>
-            <file>file:/C:/Users/Rivas/Desktop/Tienda-Muebleria/Tienda__Muebleria/web/css/estilos.css</file>
-            <file>file:/C:/Users/Rivas/Desktop/Tienda-Muebleria/Tienda__Muebleria/web/jquery/jquery.js</file>
-            <file>file:/C:/Users/Rivas/Desktop/Tienda-Muebleria/Tienda__Muebleria/src/java/modelo/dao/CategoriaGeneralDAO.java</file>
+            <file>file:/C:/Users/Rivas/Desktop/Tienda-Muebleria-master/Tienda__Muebleria/src/java/coneccion/Conexion.java</file>
+            <file>file:/C:/Users/Rivas/Desktop/Tienda-Muebleria-master/Tienda__Muebleria/src/java/modelo/bean/Producto.java</file>
+            <file>file:/C:/Users/Rivas/Desktop/Tienda-Muebleria-master/Tienda__Muebleria/src/java/controlador/ServletProducto.java</file>
+            <file>file:/C:/Users/Rivas/Desktop/Tienda-Muebleria-master/Tienda__Muebleria/web/css/estilos.css</file>
+            <file>file:/C:/Users/Rivas/Desktop/Tienda-Muebleria-master/Tienda__Muebleria/web/jquery/jquery.js</file>
+            <file>file:/C:/Users/Rivas/Desktop/Tienda-Muebleria-master/Tienda__Muebleria/src/java/controlador/ServletImg.java</file>
+            <file>file:/C:/Users/Rivas/Desktop/Tienda-Muebleria-master/Tienda__Muebleria/web/js/script.js</file>
+            <file>file:/C:/Users/Rivas/Desktop/Tienda-Muebleria-master/Tienda__Muebleria/web/index.jsp</file>
+            <file>file:/C:/Users/Rivas/Desktop/Tienda-Muebleria-master/Tienda__Muebleria/src/java/modelo/dao/ProductoDAO.java</file>
+            <file>file:/C:/Users/Rivas/Desktop/Tienda-Muebleria-master/Tienda__Muebleria/web/css/style.css</file>
         </group>
     </open-files>
 </project-private>

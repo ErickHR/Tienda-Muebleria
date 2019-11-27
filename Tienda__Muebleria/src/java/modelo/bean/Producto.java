@@ -5,7 +5,9 @@
  */
 package modelo.bean;
 
+import java.io.InputStream;
 import java.sql.Date;
+import java.util.ArrayList;
 
 /**
  *
@@ -25,7 +27,7 @@ public class Producto {
     private int Idsubcategoriaproducto;
     private int Idproveedor;
     private int Codigo;
-    private String img;
+    private InputStream img;
 
     public int getIdproducto() {
         return Idproducto;
@@ -123,12 +125,21 @@ public class Producto {
         this.Codigo = Codigo;
     }
 
-    public String getImg() {
+    public InputStream getImg() {
         return img;
     }
 
-    public void setImg(String img) {
+    public void setImg(InputStream img) {
         this.img = img;
+    }
+    
+    public boolean esta(ArrayList<Producto> lista, Producto produc){
+        for(Producto x : lista){
+            if(x.getIdproducto() == produc.getIdproducto()){
+                return true;
+            }
+        }
+        return false;
     }
     
 }

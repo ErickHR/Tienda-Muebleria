@@ -6,11 +6,16 @@
 package modelo.dao;
 
 import coneccion.Conexion;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.servlet.http.HttpServletResponse;
 import modelo.bean.Producto;
 
 /**
@@ -36,7 +41,7 @@ public class ProductoDAO {
                 prod.setDescripcion(rs.getString("descripcion"));
                 prod.setColor(rs.getString("color"));
                 prod.setDimensiones(rs.getString("dimensiones"));
-                prod.setImg(rs.getString("img"));
+                prod.setImg(rs.getBinaryStream("Foto"));
                 prod.setPrecioCompra(rs.getDouble("PrecioCompra"));
                                 
                 lista.add(prod);
@@ -71,7 +76,7 @@ public class ProductoDAO {
                 prod.setDescripcion(rs.getString("descripcion"));
                 prod.setColor(rs.getString("color"));
                 prod.setDimensiones(rs.getString("dimensiones"));
-                prod.setImg(rs.getString("img"));
+                prod.setImg(rs.getBinaryStream("Foto"));
                 prod.setPrecioCompra(rs.getDouble("PrecioCompra"));
                                 
                 lista.add(prod);
@@ -105,7 +110,7 @@ public class ProductoDAO {
                 prod.setDescripcion(rs.getString("descripcion"));
                 prod.setColor(rs.getString("color"));
                 prod.setDimensiones(rs.getString("dimensiones"));
-                prod.setImg(rs.getString("img"));
+                prod.setImg(rs.getBinaryStream("Foto"));
                 prod.setPrecioCompra(rs.getDouble("PrecioCompra"));
                                 
             }
@@ -139,7 +144,7 @@ public class ProductoDAO {
                 prod.setDescripcion(rs.getString("descripcion"));
                 prod.setColor(rs.getString("color"));
                 prod.setDimensiones(rs.getString("dimensiones"));
-                prod.setImg(rs.getString("img"));
+                prod.setImg(rs.getBinaryStream("Foto"));
                 prod.setPrecioCompra(rs.getDouble("PrecioCompra"));
                  lista.add(prod);
             }
@@ -173,7 +178,7 @@ public class ProductoDAO {
                 prod.setDescripcion(rs.getString("descripcion"));
                 prod.setColor(rs.getString("color"));
                 prod.setDimensiones(rs.getString("dimensiones"));
-                prod.setImg(rs.getString("img"));
+                prod.setImg(rs.getBinaryStream("img"));
                 prod.setPrecioCompra(rs.getDouble("PrecioCompra"));
                 prod.setStock(rs.getInt("stock"));
                                 
@@ -187,6 +192,35 @@ public class ProductoDAO {
         } catch (SQLException ex) {
             System.out.println("Error de listar del ProductoDao listarxIdCatGen");
             return null;
+        }
+
+    }
+    
+    public static void listarimg(int id, HttpServletResponse response) {
+
+        Connection cn = Conexion.abrir();
+        String sql = "select * from producto where idproducto = ?";
+        InputStream inputstream = null;
+        OutputStream outputstream = null;
+        BufferedInputStream bufferedInputStream = null;
+        BufferedOutputStream bufferedOutputStream = null;
+        response.setContentType("image/*");
+        try {
+            outputstream = response.getOutputStream();
+            PreparedStatement ps = cn.prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            if ( rs.next() ) {
+                inputstream = rs.getBinaryStream("Foto");
+            }
+            bufferedInputStream = new BufferedInputStream(inputstream);
+            bufferedOutputStream = new BufferedOutputStream(outputstream);
+            int i = 0;
+            while((i=bufferedInputStream.read())!=-1){
+                bufferedOutputStream.write(i);
+            }
+        } catch (Exception ex) {
+            System.out.println("error en productoDao listarimg");
         }
 
     }

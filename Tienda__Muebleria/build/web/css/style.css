@@ -71,7 +71,6 @@ a:focus {
 
 img {
     max-width: 100%;
-    height: auto;
 }
 
 .fix {
@@ -2539,8 +2538,4 @@ span.email-notes {
 
 .dropdown-menu{
     
-}
-.carritoprod{
-    background: grey;
-    border: 0.1px solid black
 }

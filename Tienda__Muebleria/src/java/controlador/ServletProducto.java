@@ -20,7 +20,7 @@ import modelo.dao.ProductoDAO;
  *
  * @author PARIS
  */
-@WebServlet(name = "ServletProducto", urlPatterns = {"/ServletProducto", "/ProducListar", "/ProducListarxCatGen", "/prodAgregar", "/ProdlistarxBusqueda", "/ProdlistarxSubCatProdu"})
+@WebServlet(name = "ServletProducto", urlPatterns = {"/ServletProducto", "/ProducListar", "/ProducListarxCatGen", "/prodAgregar", "/ProdlistarxBusqueda", "/ProdlistarxSubCatProdu", "/prodBorrar"})
 public class ServletProducto extends HttpServlet {
 
     private static ArrayList<Producto> carrito = new ArrayList<>();
@@ -39,8 +39,8 @@ public class ServletProducto extends HttpServlet {
                 out.println("<div class=\"col-md-4\" >"
                         + "<div class=\"work-box\">"
                         + "<div class=\"work-img\">"
-                        + "<a href=\"img/" + x.getImg() + "\" data-lightbox=\"gallery-mf\">"
-                        + "<img src=\"img/" + x.getImg() + "\" alt=\"\" class=\"img-fluid\">"
+                        + "<a href=\"ServletImg?id=" + x.getIdproducto() + "\" data-lightbox=\"gallery-mf\">"
+                        + "<img src=\"ServletImg?id=" + x.getIdproducto() + "\" height=\"190px\" width=\"960px\" class=\"img-fluid imgcarrito\">"
                         + "</a>"
                         + "</div>"
                         + "<div class=\"work-content\">"
@@ -75,8 +75,8 @@ public class ServletProducto extends HttpServlet {
                     out.println("<div class=\"col-md-4\" >"
                             + "<div class=\"work-box\">"
                             + "<div class=\"work-img\">"
-                            + "<a href=\"img/" + x.getImg() + "\" data-lightbox=\"gallery-mf\">"
-                            + "<img src=\"img/" + x.getImg() + "\" alt=\"\" class=\"img-fluid\">"
+                            + "<a href=\"ServletImg?id=" + x.getIdproducto() + "\" data-lightbox=\"gallery-mf\">"
+                            + "<img src=\"ServletImg?id=" + x.getIdproducto() + "\" height=\"190px\" width=\"960px\" class=\"img-fluid imgcarrito\">"
                             + "</a>"
                             + "</div>"
                             + "<div class=\"work-content\">"
@@ -104,12 +104,16 @@ public class ServletProducto extends HttpServlet {
         if (path.equals("/prodAgregar")) {
             String id = request.getParameter("prod");
             Producto prod = ProductoDAO.Id(Integer.parseInt(id));
-            carrito.add(prod);
+            Producto compr = new Producto();
+            if (!compr.esta(carrito, prod)) {
+                carrito.add(prod);
+            }
 
             for (Producto x : carrito) {
 
-                out.println("<li class=\"carritoprod\"><a href=#>" + x.getNombre() + "</a>"
-                        + "<INPUT TYPE=\"NUMBER\" MIN=\"0\" MAX=\"" + x.getStock() + "\" STEP=\"1\" VALUE=\"3\" SIZE=\"6\">"
+                out.println("<li class=\"carritoprod\"><a href=# style=\"color: #24b67e\">" + x.getNombre() + "</a>"
+                        + "<INPUT TYPE=\"NUMBER\" id=\"Cantidad\" MIN=\"0\" MAX=\"" + x.getStock() + "\" STEP=\"1\" VALUE=\"3\" SIZE=\"6\">"
+                        + "<button class=\"btnborrar\" onclick=\"borrar(" + x.getIdproducto() + ")\"><img src=\"img/delete-red.png\" width=\"20px\" height=\"20px\"></button>"
                         + "</li>");
             }
         }
@@ -121,8 +125,8 @@ public class ServletProducto extends HttpServlet {
                 out.println("<div class=\"col-md-4\" >"
                         + "<div class=\"work-box\">"
                         + "<div class=\"work-img\">"
-                        + "<a href=\"img/" + x.getImg() + "\" data-lightbox=\"gallery-mf\">"
-                        + "<img src=\"img/" + x.getImg() + "\" alt=\"\" class=\"img-fluid\">"
+                        + "<a href=\"ServletImg?id=" + x.getIdproducto() + "\" data-lightbox=\"gallery-mf\">"
+                        + "<img src=\"ServletImg?id=" + x.getIdproducto() + "\" height=\"190px\" width=\"960px\" class=\"img-fluid imgcarrito\">"
                         + "</a>"
                         + "</div>"
                         + "<div class=\"work-content\">"
@@ -155,8 +159,8 @@ public class ServletProducto extends HttpServlet {
                     out.println("<div class=\"col-md-4\" >"
                             + "<div class=\"work-box\">"
                             + "<div class=\"work-img\">"
-                            + "<a href=\"img/" + x.getImg() + "\" data-lightbox=\"gallery-mf\">"
-                            + "<img src=\"img/" + x.getImg() + "\" alt=\"\" class=\"img-fluid\">"
+                            + "<a href=\"ServletImg?id=" + x.getIdproducto() + "\" data-lightbox=\"gallery-mf\">"
+                            + "<img src=\"ServletImg?id=" + x.getIdproducto() + "\" height=\"190px\" width=\"960px\" class=\"img-fluid imgcarrito\">"
                             + "</a>"
                             + "</div>"
                             + "<div class=\"work-content\">"
@@ -179,7 +183,28 @@ public class ServletProducto extends HttpServlet {
                 }
             }
         }
+        if (path.equals("/prodBorrar")) {
+            String id = request.getParameter("idpr");
+            ArrayList<Producto> newa = new ArrayList<>();
+            Producto prod = ProductoDAO.Id(Integer.parseInt(id));
+            
+            for( Producto x : carrito ){
+                if(x.getIdproducto() != prod.getIdproducto())
+                    newa.add(x);
+            }
+            carrito.clear();
+            for( Producto x : newa ){
+                    carrito.add(x);
+            }
 
+            for (Producto x : carrito) {
+
+                out.println("<li class=\"carritoprod\"><a href=# style=\"color: #24b67e\">" + x.getNombre() + "</a>"
+                        + "<INPUT TYPE=\"NUMBER\" id=\"Cantidad\" MIN=\"0\" MAX=\"" + x.getStock() + "\" STEP=\"1\" VALUE=\"3\" SIZE=\"6\">"
+                        + "<button class=\"btnborrar\" onclick=\"borrar(" + x.getIdproducto() + ")\"><img src=\"img/delete-red.png\" width=\"20px\" height=\"20px\"></button>"
+                        + "</li>");
+            }
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
