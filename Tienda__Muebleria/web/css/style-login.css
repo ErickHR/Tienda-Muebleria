@@ -22,8 +22,11 @@
 
 body {
     background: #f4f4f4;
-    background-image: url(../img/logo/logomm.png);
-    background-size: 1000px 1000px;
+    background-image: url(../img/logo/logomm1.png);
+    background-size: 500px 500px;
+    background-repeat: no-repeat;
+    background-position-x: 380px;
+    background-position-y: 50px;
     color: #5a5656;
     font: 100%/1.5em 'Open Sans', sans-serif;
     margin: 0;
@@ -151,19 +154,25 @@ form fieldset a:hover { text-decoration: underline; }
     position: absolute;
     display: block;
     float: right;
-    left: 0px;
+    left: 100px;
+    top: 220px;
 }
+
 #medioor{
     position: absolute;
     display: block;
     float: right;
-    left: 250px;
+    left: 500px;
+    top: 270px;
+    
 }
 #formx{
     position: absolute;
     display: block;
     float: right;
-    width: 300px;
-    height: 600px;
+    width: 320px;
+    height: 440px;
+    right: 100px;
+    top: 140px;
     overflow: auto;
 }

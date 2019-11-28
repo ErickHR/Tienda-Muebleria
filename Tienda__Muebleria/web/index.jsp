@@ -47,31 +47,7 @@
         <%
             Clientes c = (Clientes) request.getSession().getAttribute("clientex");
         %>
-        <div class="loguearme">
-            <div class="caja-logeo">
-                <div class="logeo">
-
-                    <a href="javascript:closeVentana()"><img src="img/close/cancel.png" id="img-logeo"></a>
-                    <div class="todo-logeo">
-                        <div class="cabeza-logeo">
-                            <h1>Ingresar Datos</h1>
-                        </div>
-                        <div class="cuerpo-logeo">
-                            <table id="tabla-logeo">
-                                <tr>
-                                    <td>Usuario</td>
-                                    <td><input type="text"></td>
-                                </tr>
-                                <tr>
-                                    <td>Contraseña</td>
-                                    <td><input type="text"></td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <div id="todo">
             <header>
                 <div id="sticker" class="header-area">
