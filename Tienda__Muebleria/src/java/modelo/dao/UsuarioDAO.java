@@ -55,7 +55,7 @@ public class UsuarioDAO {
         //varioable tipo usuario
         Usuario u = null;
         //sql para buscar usuario enla base de datos
-        String sql = "select*from usuario where Usuario=? and Contraseña=?";
+        String sql = "select * from usuario where Usuario=? and Contraseña=?";
         //conexion a cnla base de datos
         Connection cn = Conexion.abrir();
         try {

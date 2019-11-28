@@ -166,7 +166,7 @@ public class ProductoDAO {
         Producto prod = null;
 
         Connection cn = Conexion.abrir();
-        String sql = "select * from producto where idsubcategoriaproducto = ?";
+        String sql = "select * from producto where Idsubcategoriaproducto = ?";
         try {
             PreparedStatement ps = cn.prepareStatement(sql);
             ps.setInt(1, idsubCatProd);
@@ -178,7 +178,7 @@ public class ProductoDAO {
                 prod.setDescripcion(rs.getString("descripcion"));
                 prod.setColor(rs.getString("color"));
                 prod.setDimensiones(rs.getString("dimensiones"));
-                prod.setImg(rs.getBinaryStream("img"));
+                prod.setImg(rs.getBinaryStream("Foto"));
                 prod.setPrecioCompra(rs.getDouble("PrecioCompra"));
                 prod.setStock(rs.getInt("stock"));
                                 

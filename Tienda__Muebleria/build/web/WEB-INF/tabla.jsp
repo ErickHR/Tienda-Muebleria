@@ -20,7 +20,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
    <!--     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
--->        
+-->      
         <link href="css/style.css" rel="stylesheet">
     </head>
     <body>
@@ -51,13 +51,10 @@
                                      id="navbar-example">
                                     <ul class="nav navbar-nav navbar-right">
                                         <li class="active">
-                                            <a class="page-scroll" href="#home">Inicio</a>
+                                            <a class="page-scroll" href="principal?">Inicio</a>
                                         </li>
                                         <li>
                                             <a class="page-scroll" href="#wrapper">Productos</a>
-                                        </li>
-                                        <li>
-                                            <a href="producVer?" id="verCarrito" class="page-scroll" >Ver Carrito</a>
                                         </li>
                                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                                 <img src="img/carrito/shopping-cart (2).png" width="30px" height="30px">
@@ -90,8 +87,6 @@
                                 <th>SUBTOTAL</th>
                                 <th>ELIMINAR</th>
                             </tr>
-                        </thead>
-                        <tbody id="tablacarrito">
                             <%  for (Producto x : listacar) {%>
 
                             <tr>
@@ -115,6 +110,10 @@
                                     i++;
                                 }
                             %>
+                        </thead>
+                        
+                        <tbody id="tablacarrito">
+                            
                         </tbody>
                     </table>
                 </div>
@@ -135,8 +134,8 @@
                             <% HttpSession sesion = request.getSession();
                                 if (sesion.getAttribute("user") == null) {
                             %>
-                            <a href="login.jsp" class="btn btn-info btn-block">Iniciar Sesion</a>
-                            <a href="registro.jsp" class="btn btn-danger btn-block">Registrar</a>
+                            <a href="loginIniciar?" class="btn btn-info btn-block">Iniciar Sesion</a>
+                            <a href="loginIniciar?" class="btn btn-danger btn-block">Registrar</a>
                             <% } else {%>
                             <a href="pago.jsp" class="btn btn-info btn-block">Realizar Pago</a>
                             <a href="detalle.jsp" class="btn btn-danger btn-block">Generar Compra</a><%}%>

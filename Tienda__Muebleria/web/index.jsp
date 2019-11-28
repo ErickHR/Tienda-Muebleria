@@ -47,7 +47,7 @@
         <%
             Clientes c = (Clientes) request.getSession().getAttribute("clientex");
         %>
-        
+
         <div id="todo">
             <header>
                 <div id="sticker" class="header-area">
@@ -92,9 +92,18 @@
                                                 <ul class="dropdown-menu" role="menu" id="carrito">
                                                 </ul>
                                             </li>
+                                            <!--<4% String sesion = (String) request.getSession().getAttribute("empleadox");
+                                                if (sesion == null) {
+                                            %>
+                                            <4% } else {%>  
+                                            <li>
+                                                <a href="login"><5%=sesion%> </a>
+                                            </li>
+                                            <4%4}%>  -->
                                             <li>
                                                 <a href="login">logearme</a>
                                             </li>
+                                                
                                         </ul>
                                     </div>
                                 </nav>
@@ -198,7 +207,7 @@
                             <select id="cbSubcatProduc"></select>
                         </div>
                         <a href="#recommended-item-carousel" class="list-group-item list-group-item-action bg-light">Recomendaciones</a>
-                        
+
                     </div>
                 </div>
                 <div id="page-content-wrapper">

@@ -2,6 +2,7 @@
 package controlador;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,6 +20,8 @@ public static int v=12;
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String path = request.getServletPath();
+        
+        PrintWriter out = response.getWriter();
         if (path.equals("/login")) {
             request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
         }
@@ -75,7 +78,8 @@ public static int v=12;
             user.setContraseña(pas);
             user.setIdcliente(v);
             UsuarioDAO.agregar(user);
-            request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
+            
+            out.println("<a class=\"page-scroll\" href=\"#wrapper\" >"+ request.getSession().getAttribute("empleadox")+"</a>");
             
         }
     }

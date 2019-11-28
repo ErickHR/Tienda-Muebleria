@@ -2542,9 +2542,3 @@ span.email-notes {
     top: 100px;
     left: 70px;
 }
-.list-group{
-    position: fixed;
-    top: 150px;
-    left: 0px;
-    content: 15rem;
-}

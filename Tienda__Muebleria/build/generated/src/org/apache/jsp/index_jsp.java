@@ -89,7 +89,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
             Clientes c = (Clientes) request.getSession().getAttribute("clientex");
         
       out.write("\n");
-      out.write("        \n");
+      out.write("\n");
       out.write("        <div id=\"todo\">\n");
       out.write("            <header>\n");
       out.write("                <div id=\"sticker\" class=\"header-area\">\n");
@@ -134,9 +134,25 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                                <ul class=\"dropdown-menu\" role=\"menu\" id=\"carrito\">\n");
       out.write("                                                </ul>\n");
       out.write("                                            </li>\n");
+      out.write("                                            ");
+ String sesion = (String) request.getSession().getAttribute("empleadox");
+                                                if (sesion.equals("terry999")) {
+                                            
+      out.write("\n");
       out.write("                                            <li>\n");
       out.write("                                                <a href=\"login\">logearme</a>\n");
       out.write("                                            </li>\n");
+      out.write("                                            ");
+ } else {
+      out.write("  \n");
+      out.write("                                            <li>\n");
+      out.write("                                                <a href=\"login\">");
+      out.print(sesion);
+      out.write(" </a>\n");
+      out.write("                                            </li>\n");
+      out.write("                                            ");
+}
+      out.write("      \n");
       out.write("                                        </ul>\n");
       out.write("                                    </div>\n");
       out.write("                                </nav>\n");
@@ -222,7 +238,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("            <div class=\"d-flex\" id=\"wrapper\">\n");
       out.write("\n");
-      out.write("                <div class=\"bg-light border-right\" id=\"sidebar-wrapper\">\n");
+      out.write("                <div class=\"bg-light border-right\" id=\"sidebar-wrapper\" >\n");
       out.write("                    <div class=\"list-group list-group-flush\" >\n");
       out.write("                        <div class=\"list-group-item list-group-item-action bg-light\" >\n");
       out.write("                            Categoria General\n");
@@ -239,9 +255,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            </br>\n");
       out.write("                            <select id=\"cbSubcatProduc\"></select>\n");
       out.write("                        </div>\n");
-      out.write("                        <a href=\"#\" class=\"list-group-item list-group-item-action bg-light\">Overview</a>\n");
-      out.write("                        <a href=\"#\" class=\"list-group-item list-group-item-action bg-light\">Events</a>\n");
-      out.write("                        <a href=\"#\" class=\"list-group-item list-group-item-action bg-light\">Profile</a>\n");
+      out.write("                        <a href=\"#recommended-item-carousel\" class=\"list-group-item list-group-item-action bg-light\">Recomendaciones</a>\n");
       out.write("\n");
       out.write("                    </div>\n");
       out.write("                </div>\n");
@@ -297,7 +311,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("                                                <div id=\"recommended-item-carousel\" class=\"carousel slide\" data-ride=\"carousel\">\n");
-      out.write("                                                    <h2 class=\"title text-center\">recommended itemsj</h2>\n");
+      out.write("                                                    <h2 class=\"title text-center\">Recomendacioness</h2>\n");
       out.write("                                                    <div class=\"carousel-inner\">\n");
       out.write("                                                        <div class=\"item active\">\t\n");
       out.write("                                                            <div class=\"col-sm-4\">\n");

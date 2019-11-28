@@ -24,18 +24,30 @@ $(function () {
             $("#cbSubcatProduc").html(data);
         });
     });
-    $("#txtbusqueda").keyup(function () {
-        var nomproduct = $("#txtbusqueda").val();
-        $.post("ProdlistarxBusqueda",{nomProd:nomproduct}, function (data) {
-            $("#productos").html(data);
-        });
-    });
-    $("#cbSubcatProduc").change(function () {
+    
+    $("#cbSubcatProduc").on("change",function () {
         var idSubCatProduc = $("#cbSubcatProduc").val();
         $.post("ProdlistarxSubCatProdu",{idSubCatProd:idSubCatProduc}, function (data) {
             $("#productos").html(data);
         });
     });
     
+    $("#txtbusqueda").keyup(function () {
+        var nomproduct = $("#txtbusqueda").val();
+        $.post("ProdlistarxBusqueda",{nomProd:nomproduct}, function (data) {
+            $("#productos").html(data);
+        });
+    });
+    $("#btnregistrarusuer").click(function () {
+        
+        $.ajax({
+            url: "nuevo",
+            type: 'POST',
+            data: $("#formx").serialize(),
+            success: function (res){
+                $("#usuarioossesion").html(res)
+            }
+        })
+    });
 
 });
