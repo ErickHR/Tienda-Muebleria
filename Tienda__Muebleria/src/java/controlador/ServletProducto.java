@@ -22,7 +22,7 @@ import modelo.dao.ProductoDAO;
  *
  * @author PARIS
  */
-@WebServlet(name = "ServletProducto", urlPatterns = {"/ServletProducto", "/ProducListar", "/ProducListarxCatGen", "/prodAgregar", "/ProdlistarxBusqueda", "/ProdlistarxSubCatProdu", "/prodBorrar", "/producVer"})
+@WebServlet(name = "ServletProducto", urlPatterns = {"/ServletProducto", "/ProducListar", "/ProducListarxCatGen", "/prodAgregar", "/ProdlistarxBusqueda", "/ProdlistarxSubCatProdu", "/prodBorrar", "/producVer", "/prodBorrarTabla"})
 public class ServletProducto extends HttpServlet {
 
     private static ArrayList<Producto> carrito = new ArrayList<>();
@@ -121,9 +121,9 @@ public class ServletProducto extends HttpServlet {
             } else if (prod != null && compr.esta(carrito, prod)) {
 
                 for (Pedido p : listapedido) {
-                    
+
                     if (p.getIdProducto() == prod.getIdproducto()) {
-                        listapedido.get(i).setCantidad(p.getCantidad()+1);
+                        listapedido.get(i).setCantidad(p.getCantidad() + 1);
                         System.out.println(p.getCantidad());
                         System.out.println(cantidad);
                         continue;
@@ -237,6 +237,44 @@ public class ServletProducto extends HttpServlet {
             request.setAttribute("listaCarrito", carrito);
             request.setAttribute("listapedido", listapedido);
             request.getRequestDispatcher("WEB-INF/tabla.jsp").forward(request, response);
+        }
+        if (path.equals("/prodBorrarTabla")) {
+            int i = 0;
+            String id = request.getParameter("idpr");
+            ArrayList<Producto> newa = new ArrayList<>();
+            Producto prod = ProductoDAO.Id(Integer.parseInt(id));
+
+            for (Producto x : carrito) {
+                if (x.getIdproducto() != prod.getIdproducto()) {
+                    newa.add(x);
+                }
+            }
+            carrito.clear();
+            for (Producto x : newa) {
+                carrito.add(x);
+            }
+            for (Producto x : carrito) {
+                out.println("<tr>"
+                        + "<td>" + x.getIdproducto() + "</td>"
+                        + "<td>" + x.getNombre() + "</td>"
+                        + "<td>" + x.getDescripcion()
+                        + "<img src=\"ServletImg?id=" + x.getIdproducto() + "\" width=\"100\" height=\"100\">\n"
+                        + "</td>"
+                        + "<td>" + x.getPrecioCompra() + "</td>"
+                        + "<td>"
+                        + "<input type=\"hidden\" id=\"idpro\" value=\"" + x.getIdproducto() + "\">\n"
+                        + "<input type=\"number\" id=\"Cantidad\" value=\"" + listapedido.get(i).getCantidad() + "\" class=\"form-control text-center\" min=\"1\">"
+                        + "</td>"
+                        + "<td>" + (listapedido.get(i).getCantidad() * x.getPrecioCompra()) + "</td>"
+                        + "<td>"
+                        + "<input type=\"hidden\" id=\"idp\" value=\"\">"
+                        + "<button onclick=\"borrarTabla(" + x.getIdproducto() + ")\">Eliminar</button>"
+                        + "</td>"
+                        + "</tr>"
+                );
+            }
+            i++;
+
         }
     }
 

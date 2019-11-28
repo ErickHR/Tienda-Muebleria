@@ -70,3 +70,10 @@ function borrar(id) {
     })
 
 }
+function borrarTabla(id) {
+
+    $.post("prodBorrarTabla", {idpr: id}, function (res) {
+        $("#tablacarrito").html(res);
+    })
+
+}

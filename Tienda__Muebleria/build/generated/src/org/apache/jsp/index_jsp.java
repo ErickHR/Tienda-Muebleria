@@ -155,7 +155,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                                </ul>\n");
       out.write("                                            </li>\n");
       out.write("                                            <li>\n");
-      out.write("                                                <a href=\"javascript:openVentana()\">logearme</a>\n");
+      out.write("                                                <a href=\"login\">logearme</a>\n");
       out.write("                                            </li>\n");
       out.write("                                        </ul>\n");
       out.write("                                    </div>\n");
@@ -394,7 +394,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                                                            <img src=\"img/1m.jpg\" alt=\"\" />\n");
       out.write("                                                                            <h2>$56</h2>\n");
       out.write("                                                                            <p>Easy Polo Black Edition</p>\n");
-      out.write("                                                                            <a href=\"#\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>AGREGAR</a>\n");
+      out.write("                                                                            <a href=\"#\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>Agregar</a>\n");
       out.write("                                                                        </div>\n");
       out.write("\n");
       out.write("                                                                    </div>\n");

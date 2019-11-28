@@ -4,6 +4,7 @@
     Author     : PARIS
 --%>
 
+<%@page import="modelo.bean.Clientes"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,6 +44,9 @@
     </head> 
 
     <body data-spy="scroll" data-target="#navbar-example" class="body_cuerpo">
+        <%
+            Clientes c = (Clientes) request.getSession().getAttribute("clientex");
+        %>
         <div class="loguearme">
             <div class="caja-logeo">
                 <div class="logeo">
@@ -116,7 +120,7 @@
                                                 </ul>
                                             </li>
                                             <li>
-                                                <a href="javascript:openVentana()">logearme</a>
+                                                <a href="login">logearme</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -355,7 +359,7 @@
                                                                             <img src="img/1m.jpg" alt="" />
                                                                             <h2>$56</h2>
                                                                             <p>Easy Polo Black Edition</p>
-                                                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>AGREGAR</a>
+                                                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar</a>
                                                                         </div>
 
                                                                     </div>
