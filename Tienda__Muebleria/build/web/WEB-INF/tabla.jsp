@@ -4,6 +4,7 @@
     Author     : Rivas
 --%>
 
+<%@page import="modelo.bean.Clientes"%>
 <%@page import="modelo.bean.Pedido"%>
 <%@page import="modelo.bean.Producto"%>
 <%@page import="java.util.ArrayList"%>
@@ -15,17 +16,19 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
 
-        
+
         <link rel="stylesheet" href="https://use.fontawesome.com/release/v5.8.2/css/all.css">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
-   <!--     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
--->      
+        <!--     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        -->      
         <link href="css/style.css" rel="stylesheet">
     </head>
     <body>
 
         <%
+            Clientes sesion = (Clientes) request.getSession().getAttribute("empleadox");
+
             ArrayList<Producto> listacar = (ArrayList<Producto>) request.getAttribute("listaCarrito");
             ArrayList<Pedido> listaped = (ArrayList<Pedido>) request.getAttribute("listapedido");
             int i = 0;
@@ -63,6 +66,13 @@
                                             <ul class="dropdown-menu" role="menu" id="carrito">
                                             </ul>
                                         </li>
+                                        <%
+                                            if (sesion != null) {
+                                        %> 
+                                        <li>
+                                            <a href="login"><%=sesion.getNombre() + sesion.getAp_paterno()%> </a>
+                                        </li>
+                                        <%}%>  
                                     </ul>
                                 </div>
                             </nav>
@@ -111,9 +121,9 @@
                                 }
                             %>
                         </thead>
-                        
+
                         <tbody id="tablacarrito">
-                            
+
                         </tbody>
                     </table>
                 </div>
@@ -131,8 +141,8 @@
                             <input type="text" value="S/.${totalPagar}0" readonly="" class="form-control">
                         </div>
                         <div class="card-footer">
-                            <% HttpSession sesion = request.getSession();
-                                if (sesion.getAttribute("user") == null) {
+                            <%
+                                if (sesion == null) {
                             %>
                             <a href="loginIniciar?" class="btn btn-info btn-block">Iniciar Sesion</a>
                             <a href="loginIniciar?" class="btn btn-danger btn-block">Registrar</a>

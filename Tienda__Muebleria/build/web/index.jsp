@@ -92,18 +92,17 @@
                                                 <ul class="dropdown-menu" role="menu" id="carrito">
                                                 </ul>
                                             </li>
-                                            <!--<4% String sesion = (String) request.getSession().getAttribute("empleadox");
+                                            <% Clientes sesion = (Clientes) request.getSession().getAttribute("empleadox");
                                                 if (sesion == null) {
                                             %>
-                                            <4% } else {%>  
-                                            <li>
-                                                <a href="login"><5%=sesion%> </a>
-                                            </li>
-                                            <4%4}%>  -->
                                             <li>
                                                 <a href="login">logearme</a>
                                             </li>
-                                                
+                                            <% } else {%>  
+                                            <li>
+                                                <a href="login"><%=sesion.getNombre() + sesion.getAp_paterno()%> </a>
+                                            </li>
+                                            <%}%>      
                                         </ul>
                                     </div>
                                 </nav>

@@ -135,8 +135,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                                </ul>\n");
       out.write("                                            </li>\n");
       out.write("                                            ");
- String sesion = (String) request.getSession().getAttribute("empleadox");
-                                                if (sesion.equals("terry999")) {
+ Clientes sesion = (Clientes) request.getSession().getAttribute("empleadox");
+                                                if (sesion == null) {
                                             
       out.write("\n");
       out.write("                                            <li>\n");
@@ -147,7 +147,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("  \n");
       out.write("                                            <li>\n");
       out.write("                                                <a href=\"login\">");
-      out.print(sesion);
+      out.print(sesion.getNombre() + sesion.getAp_paterno());
       out.write(" </a>\n");
       out.write("                                            </li>\n");
       out.write("                                            ");
