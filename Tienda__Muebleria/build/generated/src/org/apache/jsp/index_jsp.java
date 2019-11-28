@@ -3,6 +3,7 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import modelo.bean.Clientes;
 
 public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -44,6 +45,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
+      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html lang=\"en\">\n");
       out.write("\n");
@@ -82,31 +84,12 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </head> \n");
       out.write("\n");
       out.write("    <body data-spy=\"scroll\" data-target=\"#navbar-example\" class=\"body_cuerpo\">\n");
-      out.write("        <div class=\"loguearme\">\n");
-      out.write("            <div class=\"caja-logeo\">\n");
-      out.write("                <div class=\"logeo\">\n");
+      out.write("        ");
+
+            Clientes c = (Clientes) request.getSession().getAttribute("clientex");
+        
       out.write("\n");
-      out.write("                    <a href=\"javascript:closeVentana()\"><img src=\"img/close/cancel.png\" id=\"img-logeo\"></a>\n");
-      out.write("                    <div class=\"todo-logeo\">\n");
-      out.write("                        <div class=\"cabeza-logeo\">\n");
-      out.write("                            <h1>Ingresar Datos</h1>\n");
-      out.write("                        </div>\n");
-      out.write("                        <div class=\"cuerpo-logeo\">\n");
-      out.write("                            <table id=\"tabla-logeo\">\n");
-      out.write("                                <tr>\n");
-      out.write("                                    <td>Usuario</td>\n");
-      out.write("                                    <td><input type=\"text\"></td>\n");
-      out.write("                                </tr>\n");
-      out.write("                                <tr>\n");
-      out.write("                                    <td>Contraseña</td>\n");
-      out.write("                                    <td><input type=\"text\"></td>\n");
-      out.write("                                </tr>\n");
-      out.write("                            </table>\n");
-      out.write("                        </div>\n");
-      out.write("                    </div>\n");
-      out.write("                </div>\n");
-      out.write("            </div>\n");
-      out.write("        </div>\n");
+      out.write("        \n");
       out.write("        <div id=\"todo\">\n");
       out.write("            <header>\n");
       out.write("                <div id=\"sticker\" class=\"header-area\">\n");
@@ -134,9 +117,6 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                            </li>\n");
       out.write("                                            <li>\n");
       out.write("                                                <a class=\"page-scroll\" href=\"#wrapper\">Productos</a>\n");
-      out.write("                                            </li>\n");
-      out.write("                                            <li>\n");
-      out.write("                                                <a class=\"page-scroll\" href=\"#portfolio\">Portfolio</a>\n");
       out.write("                                            </li>\n");
       out.write("                                            <li>\n");
       out.write("                                                <a class=\"page-scroll\" href=\"#contact\">Contactanos</a>\n");

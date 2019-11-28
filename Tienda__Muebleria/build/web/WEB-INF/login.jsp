@@ -4,6 +4,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="img/logo/logomm.png" rel="icon">
         <title>Login</title>
         <script src="js/jsLogin.js" type="text/javascript"></script>
         

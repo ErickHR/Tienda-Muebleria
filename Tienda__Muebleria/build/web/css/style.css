@@ -2536,6 +2536,15 @@ span.email-notes {
     margin-top: 0px;
 }
 
-.dropdown-menu{
-    
+#cajitaTabl{
+    position: relative;
+    display: block;
+    top: 100px;
+    left: 70px;
+}
+.list-group{
+    position: fixed;
+    top: 150px;
+    left: 0px;
+    content: 15rem;
 }

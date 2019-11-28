@@ -77,9 +77,6 @@
                                                 <a class="page-scroll" href="#wrapper">Productos</a>
                                             </li>
                                             <li>
-                                                <a class="page-scroll" href="#portfolio">Portfolio</a>
-                                            </li>
-                                            <li>
                                                 <a class="page-scroll" href="#contact">Contactanos</a>
                                             </li>
                                             <li>
@@ -183,7 +180,7 @@
 
             <div class="d-flex" id="wrapper">
 
-                <div class="bg-light border-right" id="sidebar-wrapper">
+                <div class="bg-light border-right" id="sidebar-wrapper" >
                     <div class="list-group list-group-flush" >
                         <div class="list-group-item list-group-item-action bg-light" >
                             Categoria General
@@ -200,10 +197,8 @@
                             </br>
                             <select id="cbSubcatProduc"></select>
                         </div>
-                        <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
-                        <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
-                        <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
-
+                        <a href="#recommended-item-carousel" class="list-group-item list-group-item-action bg-light">Recomendaciones</a>
+                        
                     </div>
                 </div>
                 <div id="page-content-wrapper">
@@ -258,7 +253,7 @@
 
 
                                                 <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
-                                                    <h2 class="title text-center">recommended itemsj</h2>
+                                                    <h2 class="title text-center">Recomendacioness</h2>
                                                     <div class="carousel-inner">
                                                         <div class="item active">	
                                                             <div class="col-sm-4">
